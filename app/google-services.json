@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "961273128661",
+    "project_id": "dcyourself",
+    "storage_bucket": "dcyourself.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961273128661:android:23e96782c865fc8309a45c",
+        "android_client_info": {
+          "package_name": "com.erickcapilla.dcyourself"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961273128661-c9l9qj0dg7ql8ac38ndcrud9bpgq3um9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYD35v9GVFiYDiRjGFaUtWg4DOgBO-47s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961273128661-c9l9qj0dg7ql8ac38ndcrud9bpgq3um9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
