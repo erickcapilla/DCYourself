@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.INTERNET" />
 
   <application
     android:allowBackup="true"
@@ -13,6 +13,66 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.DCYour"
     tools:targetApi="31">
+    <activity
+      android:name=".Preferences"
+      android:exported="false" />
+    <activity
+      android:name=".Recommendations"
+      android:exported="false" />
+    <activity
+      android:name=".UpdateMedicines"
+      android:exported="false" />
+    <activity
+      android:name=".AddMedicines"
+      android:exported="false" />
+    <activity
+      android:name=".Medicines"
+      android:exported="false" />
+    <activity
+      android:name=".AddData"
+      android:exported="false" />
+    <activity
+      android:name=".Graph"
+      android:exported="false" />
+    <activity
+      android:name=".Type"
+      android:exported="false" />
+    <activity
+      android:name=".Test"
+      android:exported="false" />
+    <activity
+      android:name=".Negative"
+      android:exported="false" />
+    <activity
+      android:name=".Positive"
+      android:exported="false" />
+    <activity
+      android:name=".Diagnose"
+      android:exported="false" />
+    <activity
+      android:name=".Exercise"
+      android:exported="false" />
+    <activity
+      android:name=".DiabetesFamily"
+      android:exported="false" />
+    <activity
+      android:name=".WeightHeight"
+      android:exported="false" />
+    <activity
+      android:name=".BirthDate"
+      android:exported="false" />
+    <activity
+      android:name=".Gender"
+      android:exported="false" />
+    <activity
+      android:name=".RecoverPassword2"
+      android:exported="false" />
+    <activity
+      android:name=".RecoverPassword"
+      android:exported="false" />
+    <activity
+      android:name=".ChangePassword"
+      android:exported="false" />
     <activity
       android:name=".Home"
       android:exported="false" />

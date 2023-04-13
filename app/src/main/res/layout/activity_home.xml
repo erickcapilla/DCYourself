@@ -31,10 +31,10 @@
     app:srcCompat="@drawable/change_password" />
 
   <ImageButton
+    android:background="#00FFFFFF"
     android:id="@+id/logout_button"
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:background="#00FFFFFF"
     android:onClick="logout"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
