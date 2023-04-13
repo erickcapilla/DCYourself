@@ -4,6 +4,63 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="#7378DFDF"
   tools:context=".Test">
+
+  <TextView
+    android:id="@+id/my_label"
+    android:layout_width="370dp"
+    android:layout_height="565dp"
+    android:layout_marginTop="100dp"
+    android:background="@drawable/borderedondo"
+    android:padding="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.478"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/textView16"
+    android:layout_width="294dp"
+    android:layout_height="36dp"
+    android:layout_marginEnd="16dp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:text="Elige la opción con la que te sientas más identificado"
+    android:textAlignment="center"
+    android:textColor="#FFFFFF"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.59"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.162" />
+
+  <Button
+    android:id="@+id/button2"
+    android:layout_width="244dp"
+    android:layout_height="55dp"
+    android:background="@drawable/botonredondo"
+    android:fontFamily="@font/droid_sans_bold"
+    android:text="Finalizar"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#FFFFFF"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.496"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.946" />
+
+  <ImageView
+    android:id="@+id/imageView17"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/logo_secundario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

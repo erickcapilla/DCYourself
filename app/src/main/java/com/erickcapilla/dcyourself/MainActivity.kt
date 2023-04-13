@@ -7,6 +7,10 @@ import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1500)
+
+        setTheme(R.style.Theme_DCYour)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
