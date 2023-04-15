@@ -153,7 +153,7 @@
 
 
   <EditText
-    android:id="@+id/editTextName"
+    android:id="@+id/editName"
     android:layout_width="252dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"

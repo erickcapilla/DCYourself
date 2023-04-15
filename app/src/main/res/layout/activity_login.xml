@@ -44,7 +44,7 @@
     app:srcCompat="@drawable/logo_principal" />
 
   <EditText
-    android:id="@+id/editTextName"
+    android:id="@+id/editEmail"
     android:layout_width="314dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"
@@ -65,7 +65,7 @@
     app:layout_constraintVertical_bias="0.589" />
 
   <EditText
-    android:id="@+id/editTextLastName"
+    android:id="@+id/editPassword"
     android:layout_width="314dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"
@@ -104,7 +104,7 @@
     app:layout_constraintStart_toStartOf="parent" />
 
   <Button
-    android:id="@+id/signUp"
+    android:id="@+id/logIn"
     android:layout_width="112dp"
     android:layout_height="56dp"
     android:layout_marginBottom="40dp"
@@ -121,7 +121,7 @@
     app:layout_constraintStart_toStartOf="parent" />
 
   <TextView
-    android:id="@+id/textView6"
+    android:id="@+id/textForgot"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="@font/droid_sans"

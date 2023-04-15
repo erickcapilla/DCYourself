@@ -81,7 +81,7 @@
     app:srcCompat="@drawable/logo_secundario" />
 
   <EditText
-    android:id="@+id/editTextLastName2"
+    android:id="@+id/editConfirmPassword"
     android:layout_width="314dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"
@@ -99,7 +99,7 @@
     app:layout_constraintVertical_bias="0.742" />
 
   <EditText
-    android:id="@+id/editTextName"
+    android:id="@+id/editEmail"
     android:layout_width="314dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"
@@ -117,7 +117,7 @@
     app:layout_constraintVertical_bias="0.462" />
 
   <EditText
-    android:id="@+id/editTextLastName"
+    android:id="@+id/editPassword"
     android:layout_width="314dp"
     android:layout_height="56dp"
     android:background="@drawable/textoredblanco"

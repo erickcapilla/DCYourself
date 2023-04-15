@@ -4,12 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1500)
+        Thread.sleep(1000)
 
         setTheme(R.style.Theme_DCYour)
+
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            val change = Intent(this, Home::class.java)
+            startActivity(change)
+        }
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
