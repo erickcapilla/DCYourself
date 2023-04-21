@@ -15,80 +15,104 @@
     tools:targetApi="31">
     <activity
       android:name=".Preferences"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Recommendations"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".UpdateMedicines"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".AddMedicines"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Medicines"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".AddData"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Graph"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Type"
       android:exported="false" />
     <activity
       android:name=".Test"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Negative"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Positive"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Diagnose"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Exercise"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".DiabetesFamily"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".WeightHeight"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".BirthDate"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Gender"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".RecoverPassword2"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".RecoverPassword"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".ChangePassword"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Home"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".Login"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".SignUp2"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".SignUp"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait"/>
     <activity
       android:name=".MainActivity"
       android:theme="@style/SplashTheme"
-      android:exported="true">
+      android:exported="true"
+      android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 

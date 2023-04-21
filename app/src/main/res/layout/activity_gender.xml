@@ -93,20 +93,6 @@
     app:srcCompat="@drawable/logo" />
 
   <TextView
-    android:id="@+id/textView8"
-    android:layout_width="152dp"
-    android:layout_height="218dp"
-    android:background="@drawable/botonredondo"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.863"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.724"
-    tools:ignore="MissingConstraints" />
-
-  <TextView
     android:id="@+id/textView10"
     android:layout_width="56dp"
     android:layout_height="7dp"
@@ -176,23 +162,9 @@
     app:layout_constraintVertical_bias="0.429"
     tools:ignore="MissingConstraints" />
 
-  <TextView
-    android:id="@+id/textView9"
-    android:layout_width="152dp"
-    android:layout_height="218dp"
-    android:background="@drawable/botonredondo"
-    android:text=""
-    android:textAlignment="center"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.128"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.724"
-    tools:ignore="MissingConstraints" />
 
-  <ImageView
-    android:id="@+id/imageView5"
+  <ImageButton
+    android:id="@+id/iBMan"
     android:layout_width="151dp"
     android:layout_height="216dp"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -201,20 +173,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.722"
+    android:background="@drawable/botonredondo"
     app:srcCompat="@drawable/hombre1"
-    tools:ignore="MissingConstraints" />
-
-  <ImageView
-    android:id="@+id/imageView6"
-    android:layout_width="150dp"
-    android:layout_height="216dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/textView8"
-    app:layout_constraintHorizontal_bias="0.568"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.725"
-    app:srcCompat="@drawable/mujer1"
     tools:ignore="MissingConstraints" />
 
   <ImageButton
@@ -228,5 +188,17 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/sign_out" />
+
+  <ImageButton
+    android:id="@+id/imageButton"
+    android:layout_width="150dp"
+    android:layout_height="216dp"
+    android:layout_marginStart="44dp"
+    android:background="@drawable/botonredondo"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.722"
+    app:srcCompat="@drawable/mujer1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,13 @@ class SignUp : AppCompatActivity() {
         val editLastName2 = findViewById<EditText>(R.id.editLastName2)
 
         val next = findViewById<Button>(R.id.next)
+
         next.setOnClickListener {
             if(!editEmpty(editName) || !editEmpty(editLastName) || !editEmpty(editLastName2)) {
                 val change = Intent(this, SignUp2::class.java)
+                /*
+                * Se envían los datos de este Activity al siguiente activity
+                * */
                 change.putExtra("name", editName.text.toString())
                 change.putExtra("lastName", editLastName.text.toString())
                 change.putExtra("lastName2", editLastName2.text.toString())
@@ -32,12 +36,17 @@ class SignUp : AppCompatActivity() {
 
         }
 
-        val goBack =findViewById<Button>(R.id.go_back)
+        val goBack = findViewById<Button>(R.id.go_back)
         goBack.setOnClickListener{
             finish()
         }
     }
 
+    /*
+    * Campo vacío
+    * @param edit Se refiere al campo a verificar
+    * @return Esta función retorna si el campo esta vacío. Retorna un valor Boleano
+    * */
     private fun editEmpty(edit: EditText): Boolean {
         return edit.text.toString().trim().isEmpty()
     }

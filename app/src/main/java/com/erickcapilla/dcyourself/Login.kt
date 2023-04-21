@@ -53,6 +53,11 @@ class Login : AppCompatActivity() {
         }
     }
 
+    /*
+    * Campo vacío
+    * @param edit Se refiere al campo a verificar
+    * @return Esta función retorna si el campo esta vacío. Retorna un valor Boleano
+    * */
     private fun editEmpty(edit: EditText): Boolean {
         return edit.text.toString().trim().isEmpty()
     }

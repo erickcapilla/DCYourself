@@ -39,6 +39,9 @@ class RecoverPassword : AppCompatActivity() {
                     .setAndroidPackageName("com.erickcapilla.dcyourself", false, null)
                     .build()
                  */
+                /*
+                * Envía correo al usuario para recuperar su contraseña
+                * */
                 auth!!.sendPasswordResetEmail(email)
                     .addOnCompleteListener {
                         if(it.isSuccessful) {
@@ -64,6 +67,9 @@ class RecoverPassword : AppCompatActivity() {
         return edit.text.toString().trim().isEmpty()
     }
 
+    /*
+    * Regresa al Activity principal
+    * */
     private fun goMain() {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

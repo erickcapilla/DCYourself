@@ -38,6 +38,10 @@ class ChangePassword : AppCompatActivity() {
                 user!!.reauthenticate(credential)
                     .addOnCompleteListener(this) {
                         if(it.isSuccessful) {
+                            /*
+                            * Se modifica la contraseña del usuario
+                            * @param password Nueva contraseña del usuario
+                            * */
                             user!!.updatePassword(editNewPassword.text.toString())
                                 .addOnCompleteListener { task ->
                                     if(task.isSuccessful) {

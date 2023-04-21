@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
 
         setTheme(R.style.Theme_DCYour)
 
+        /*
+        * Se revisa si un usuario tiene sesión activa
+        * */
         val user = Firebase.auth.currentUser
         if (user != null) {
             val change = Intent(this, Home::class.java)
