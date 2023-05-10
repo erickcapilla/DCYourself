@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/bottom_data"
+    android:icon="@drawable/baseline_graph_24"
+    android:title="Datos"/>
+  <item
+    android:id="@+id/bottom_diagnose"
+    android:icon="@drawable/baseline_blood_24"
+    android:title="Diagnosticar"/>
+  <item
+    android:id="@+id/bottom_home"
+    android:icon="@drawable/baseline_home_24"
+    android:title="Inicio"/>
+  <item
+    android:id="@+id/bottom_recommend"
+    android:icon="@drawable/baseline_recommend_24"
+    android:title="Recomendaciones"/>
+  <item
+    android:id="@+id/bottom_med"
+    android:icon="@drawable/baseline_medication_24"
+    android:title="Medicamentos"/>
+</menu>

@@ -8,15 +8,30 @@
   tools:context=".Gender">
 
   <TextView
-    android:id="@+id/my_label4"
-    android:layout_width="425dp"
-    android:layout_height="550dp"
-    android:layout_marginTop="288dp"
-    android:background="@drawable/borderedondo"
+    android:id="@+id/my_label"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="330dp"
+    android:background="@drawable/form_background"
     android:padding="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <ImageView
+    android:id="@+id/imageView4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/my_label"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.3"
+    app:srcCompat="@drawable/logo"
+    android:contentDescription="Logo de la app"/>
 
   <TextView
     android:id="@+id/textView4"
@@ -27,27 +42,98 @@
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="#155959"
     android:textSize="24sp"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/my_label"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.285" />
+    app:layout_constraintTop_toBottomOf="@+id/imageView4"
+    app:layout_constraintVertical_bias="0.5" />
 
-  <TextView
-    android:id="@+id/textView19"
-    android:layout_width="85dp"
-    android:layout_height="25dp"
-    android:fontFamily="@font/droid_sans_bold"
-    android:text="Hombre"
-    android:textAlignment="center"
-    android:textColor="@color/white"
-    android:textSize="20dp"
-    app:layout_constraintBottom_toBottomOf="parent"
+  <ImageView
+    android:id="@+id/imageView5"
+    android:layout_width="56dp"
+    android:layout_height="7dp"
+    app:layout_constraintBottom_toTopOf="@+id/iBWoman"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.785"
+    app:layout_constraintHorizontal_bias="0.1"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.856" />
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.2"
+    app:srcCompat="@drawable/indicator_active" />
+
+  <ImageView
+    android:id="@+id/imageView6"
+    android:layout_width="56dp"
+    android:layout_height="7dp"
+    app:layout_constraintBottom_toTopOf="@+id/iBWoman"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.3"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.2"
+    app:srcCompat="@drawable/indicator_inactive" />
+
+  <ImageView
+    android:id="@+id/imageView7"
+    android:layout_width="56dp"
+    android:layout_height="7dp"
+    app:layout_constraintBottom_toTopOf="@+id/iBWoman"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.2"
+    app:srcCompat="@drawable/indicator_inactive" />
+
+  <ImageView
+    android:id="@+id/imageView8"
+    android:layout_width="56dp"
+    android:layout_height="7dp"
+    app:layout_constraintBottom_toTopOf="@+id/iBWoman"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.7"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.2"
+    app:srcCompat="@drawable/indicator_inactive" />
+
+  <ImageView
+    android:id="@+id/imageView9"
+    android:layout_width="56dp"
+    android:layout_height="7dp"
+    app:layout_constraintBottom_toTopOf="@+id/iBWoman"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.9"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.2"
+    app:srcCompat="@drawable/indicator_inactive" />
+
+  <ImageButton
+    android:id="@+id/iBWoman"
+    android:layout_width="150dp"
+    android:layout_height="216dp"
+    android:background="@drawable/button_background_info"
+    app:layout_constraintBottom_toTopOf="@+id/textView20"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/iBMan"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.8"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:srcCompat="@drawable/mujer1" />
+
+  <ImageButton
+    android:id="@+id/iBMan"
+    android:layout_width="151dp"
+    android:layout_height="216dp"
+    app:layout_constraintBottom_toTopOf="@+id/textView19"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/iBWoman"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.8"
+    app:layout_constraintHorizontal_bias="0.5"
+    android:background="@drawable/button_background_info"
+    app:srcCompat="@drawable/hombre1"
+    tools:ignore="MissingConstraints" />
 
   <TextView
     android:id="@+id/textView20"
@@ -58,128 +144,48 @@
     android:textAlignment="center"
     android:textColor="@color/white"
     android:textSize="20dp"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/next"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.211"
+    app:layout_constraintHorizontal_bias="0.23"
+    app:layout_constraintVertical_bias="0.9"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.856" />
+    app:layout_constraintTop_toTopOf="@+id/my_label" />
+
+  <TextView
+    android:id="@+id/textView19"
+    android:layout_width="85dp"
+    android:layout_height="25dp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:text="Hombre"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@+id/next"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.77"
+    app:layout_constraintVertical_bias="0.9"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label" />
 
   <Button
-    android:id="@+id/button8"
+    android:id="@+id/next"
     android:layout_width="244dp"
     android:layout_height="53.75dp"
     android:layout_marginBottom="28dp"
-    android:background="@drawable/botonredondo"
+    android:background="@drawable/button_background_primary"
     android:fontFamily="@font/droid_sans_bold"
-    android:onClick="siguiente"
     android:text="Siguiente"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textColor="@color/white"
     android:textSize="20sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
-    app:layout_constraintStart_toStartOf="parent" />
-
-  <ImageView
-    android:id="@+id/imageView4"
-    android:layout_width="114dp"
-    android:layout_height="130dp"
-    android:layout_marginTop="40dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/logo" />
-
-  <TextView
-    android:id="@+id/textView10"
-    android:layout_width="56dp"
-    android:layout_height="7dp"
-    android:background="@drawable/botonredondo"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.091"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.429"
-    tools:ignore="MissingConstraints" />
-
-  <TextView
-    android:id="@+id/textView12"
-    android:layout_width="56dp"
-    android:layout_height="7dp"
-    android:background="@drawable/textoredblanco"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.694"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.429"
-    tools:ignore="MissingConstraints" />
-
-  <TextView
-    android:id="@+id/textView18"
-    android:layout_width="56dp"
-    android:layout_height="7dp"
-    android:background="@drawable/textoredblanco"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.899"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.429"
-    tools:ignore="MissingConstraints" />
-
-  <TextView
-    android:id="@+id/textView15"
-    android:layout_width="56dp"
-    android:layout_height="7dp"
-    android:background="@drawable/textoredblanco"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.429"
-    tools:ignore="MissingConstraints" />
-
-  <TextView
-    android:id="@+id/textView13"
-    android:layout_width="56dp"
-    android:layout_height="7dp"
-    android:background="@drawable/textoredblanco"
-    android:text=""
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.299"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.429"
-    tools:ignore="MissingConstraints" />
-
-
-  <ImageButton
-    android:id="@+id/iBMan"
-    android:layout_width="151dp"
-    android:layout_height="216dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.859"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.722"
-    android:background="@drawable/botonredondo"
-    app:srcCompat="@drawable/hombre1"
-    tools:ignore="MissingConstraints" />
+    app:layout_constraintStart_toStartOf="parent" />
 
   <ImageButton
     android:background="#00FFFFFF"
-    android:id="@+id/imageView7"
+    android:id="@+id/logOut"
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_marginTop="16dp"
@@ -188,17 +194,5 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/sign_out" />
-
-  <ImageButton
-    android:id="@+id/imageButton"
-    android:layout_width="150dp"
-    android:layout_height="216dp"
-    android:layout_marginStart="44dp"
-    android:background="@drawable/botonredondo"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.722"
-    app:srcCompat="@drawable/mujer1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

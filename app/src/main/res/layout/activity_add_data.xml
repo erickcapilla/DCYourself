@@ -4,6 +4,175 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="#7378DFDF"
   tools:context=".AddData">
+
+  <TextView
+    android:id="@+id/my_label"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="330dp"
+    android:background="@drawable/form_background"
+    android:padding="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <ImageView
+    android:id="@+id/imageView4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/my_label"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.3"
+    app:srcCompat="@drawable/logo"
+    android:contentDescription="Logo de la app"/>
+
+  <TextView
+    android:id="@+id/textView4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/open_sans_bold"
+    android:text="Ingresa los datos que se solicitan"
+    android:textAlignment="center"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+    android:textColor="#155959"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toTopOf="@+id/my_label"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageView4"
+    app:layout_constraintVertical_bias="0.5" />
+
+  <TextView
+    android:id="@+id/textAddData"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/open_sans_bold"
+    android:text="Agregar datos"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+    android:textColor="@color/white"
+    android:textSize="32sp"
+    app:layout_constraintBottom_toTopOf="@+id/editGlucose"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/my_label"
+    app:layout_constraintVertical_bias="0.3" />
+
+  <EditText
+    android:id="@+id/editGlucose"
+    android:layout_width="314dp"
+    android:layout_height="56dp"
+    android:background="@drawable/button_background_secondary"
+    android:fontFamily="@font/droid_sans"
+    android:hint="Glucosa"
+    android:inputType="numberDecimal"
+    android:paddingStart="10dp"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toTopOf="@+id/editHemoglobin"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textAddData"
+    app:layout_constraintVertical_bias="0.5"
+    tools:ignore="RtlSymmetry" />
+
+  <EditText
+    android:id="@+id/editHemoglobin"
+    android:layout_width="314dp"
+    android:layout_height="56dp"
+    android:background="@drawable/button_background_secondary"
+    android:fontFamily="@font/droid_sans"
+    android:hint="Hemoglobina"
+    android:inputType="numberDecimal"
+    android:paddingStart="10dp"
+    android:textSize="16sp"
+    app:layout_constraintTop_toBottomOf="@+id/editGlucose"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/editInsulin"
+    app:layout_constraintVertical_bias="0.5"
+    tools:ignore="RtlSymmetry" />
+
+  <EditText
+    android:id="@+id/editInsulin"
+    android:layout_width="314dp"
+    android:layout_height="56dp"
+    android:background="@drawable/button_background_secondary"
+    android:fontFamily="@font/droid_sans"
+    android:hint="Insulina"
+    android:inputType="numberDecimal"
+    android:paddingStart="10dp"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toTopOf="@+id/go_back"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/editHemoglobin"
+    app:layout_constraintVertical_bias="0.5"
+    tools:ignore="RtlSymmetry"/>
+
+  <Button
+    android:id="@+id/go_back"
+    android:layout_width="112dp"
+    android:layout_height="56dp"
+    android:layout_marginBottom="40dp"
+    android:background="@drawable/button_background_secondary"
+    android:backgroundTint="@color/white"
+    android:fontFamily="@font/droid_sans_bold"
+    android:text="Atrás"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#28A6A6"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.197"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+    android:id="@+id/next"
+    android:layout_width="112dp"
+    android:layout_height="56dp"
+    android:layout_marginBottom="40dp"
+    android:background="@drawable/button_background_primary"
+    android:fontFamily="@font/droid_sans_bold"
+    android:text="Siguiente"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@color/white"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.775"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageButton
+    android:background="#00FFFFFF"
+    android:id="@+id/logOut"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.05"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/sign_out" />
+
+  <ImageButton
+    android:background="#00FFFFFF"
+    android:id="@+id/help"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.95"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/question" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

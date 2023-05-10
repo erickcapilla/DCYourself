@@ -14,7 +14,16 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#155959</item>
+    </style>
+
     <style name="SplashTheme" parent="Theme.DCYour">
         <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="SliderActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
     </style>
 </resources>

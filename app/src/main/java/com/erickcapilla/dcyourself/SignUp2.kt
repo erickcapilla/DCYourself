@@ -2,12 +2,14 @@ package com.erickcapilla.dcyourself
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.provider.services.firebase.FBAuth
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,17 +19,15 @@ import com.google.firebase.ktx.Firebase
 
 class SignUp2 : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    /*
-    * Instancia de la base de datos
-    * */
     private val db = Firebase.firestore
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up2)
 
         auth = Firebase.auth
-
         val bundle = intent.extras
         val name = bundle?.getString("name")
         val lastName = bundle?.getString("lastName")
@@ -38,71 +38,128 @@ class SignUp2 : AppCompatActivity() {
         val editConfirmPassword = findViewById<EditText>(R.id.editConfirmPassword)
         val accept = findViewById<CheckBox>(R.id.accept)
 
+        val uiModel = UIModel()
+
         val signUp = findViewById<Button>(R.id.signUp)
         signUp.setOnClickListener {
-            if(!editEmpty(editEmail) || !editEmpty(editPassword) || !editEmpty(editConfirmPassword)) {
-                if(editPassword.text.toString() == editConfirmPassword.text.toString()) {
-                    if(accept.isChecked) {
-                        /*
-                        * Crea un nuevo usuario con el correo y contraseña
-                        * @param email Email del usuario
-                        * @param password Contraseña del usuario
-                        * */
-                        auth.createUserWithEmailAndPassword(editEmail.text.toString(),
-                            editPassword.text.toString()).addOnCompleteListener(this) {
-                                if(it.isSuccessful) {
-                                    Toast.makeText(applicationContext, "Usuario registrado",
-                                        Toast.LENGTH_SHORT).show()
-                                    /*
-                                    * user: Instancia para los usuario registrados en la base de datos
-                                    * */
-                                    val user = Firebase.auth.currentUser!!
+            val email: String
+            val password: String
+            val confirmPassword: String
 
-                                    val credential = EmailAuthProvider
-                                        .getCredential(editEmail.text.toString(), editPassword.text.toString())
-                                    /*
-                                    * Guarda los datos del usuario en la base de datos
-                                    * @para credential Credenciales del usuario autenticado
-                                    * @param email Correo del usuario al que se asocian los datos
-                                    * @param data Datos del usuario (nombre, apellido paterno, apellido materno)
-                                    * */
-                                    user.reauthenticate(credential)
-                                        .addOnCompleteListener {
-                                            db.collection("user").document(editEmail.text.toString())
-                                                .set(hashMapOf(
-                                                    "name" to name,
-                                                    "lastName" to lastName,
-                                                    "lastName2" to lastName2
-                                                ))
-                                        }
-                                    Firebase.auth.signOut()
-                                    val change = Intent(this, Login::class.java)
-                                    startActivity(change)
-                                } else {
-                                    Toast.makeText(applicationContext, "Se ha producido un error, Vuelve a intentarlo",
-                                        Toast.LENGTH_SHORT).show()
-                                }
-                        }
-
-
-                    } else {
-                        Toast.makeText(applicationContext, "Debes aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    Toast.makeText(applicationContext, "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show()
-                }
+            if(uiModel.isEditEmpty(listOf(editEmail, editPassword, editConfirmPassword))) {
+                uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
+                return@setOnClickListener
             } else {
-                Toast.makeText(applicationContext, "Ingresa todos los datos que se solicitan", Toast.LENGTH_SHORT).show()
+                email = editEmail.text.toString()
+                password = editPassword.text.toString()
+                confirmPassword = editConfirmPassword.text.toString()
             }
+
+            if(!uiModel.isEmailValid(email)) {
+                uiModel.showToast(applicationContext, "Email no valido")
+                return@setOnClickListener
+            }
+
+            if(password != confirmPassword) {
+                uiModel.showToast(applicationContext, "Las contraseñas deben coincidir")
+                return@setOnClickListener
+            }
+
+            if(!accept.isChecked) {
+                uiModel.showToast(applicationContext, "Debes aceptar los términos y condiciones")
+                return@setOnClickListener
+            }
+
+            auth.createUserWithEmailAndPassword(editEmail.text.toString(),
+                editPassword.text.toString()).addOnCompleteListener(this) { task ->
+                if(task.isSuccessful) {
+                    val user = Firebase.auth.currentUser!!
+                    val credential = EmailAuthProvider
+                        .getCredential(email, password)
+                    user.reauthenticate(credential)
+                        .addOnCompleteListener {
+                            db.collection("user").document(email)
+                                .set(hashMapOf(
+                                    "name" to name,
+                                    "lastName" to lastName,
+                                    "lastName2" to lastName2
+                                ))
+                            db.collection("info").document(email)
+                                .set(hashMapOf(
+                                    "gender" to "",
+                                    "date" to "",
+                                    "weight" to "",
+                                    "height" to "",
+                                    "family" to "",
+                                    "exercise" to "",
+
+                                ))
+                        }
+                    Firebase.auth.signOut()
+                    editEmail.setText("")
+                    editPassword.setText("")
+                    editConfirmPassword.setText("")
+                    accept.isChecked = false
+                    uiModel.showToast(applicationContext, "Usuario registrado")
+                    val change = Intent(this, Login::class.java)
+                    startActivity(change)
+                } else {
+                    uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
+                }
+            }
+
+            /*
+                    /*val status = fBAuth.signUpUser(
+                        name.toString(), lastName.toString(), lastName2.toString(), email, password
+                    )*/
+                    if(!uiModel.isEmailValid(email)) {
+                        uiModel.showToast(applicationContext, "Email no valido")
+                        return@setOnClickListener
+                    }
+                    auth.createUserWithEmailAndPassword(editEmail.text.toString(),
+                        editPassword.text.toString()).addOnCompleteListener(this) { task ->
+                            if(task.isSuccessful) {
+                                val user = Firebase.auth.currentUser!!
+                                val credential = EmailAuthProvider
+                                    .getCredential(email, password)
+                                user.reauthenticate(credential)
+                                    .addOnCompleteListener {
+                                        db.collection("user").document(email)
+                                            .set(hashMapOf(
+                                                "name" to name,
+                                                "lastName" to lastName,
+                                                "lastName2" to lastName2
+                                            ))
+                                    }
+                                Firebase.auth.signOut()
+                                uiModel.showToast(applicationContext, "Usuario registrado")
+                            } else {
+                                uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
+                            }
+                        }
+                    /*if(status) {
+                        uiModel.showToast(applicationContext, "Usuario registrado")
+                    } else {
+                        uiModel.showToast(applicationContext, "Se ha producido un error, Vuelve a intentarlo")
+                    }*/
+                 */
         }
 
         val goBack = findViewById<Button>(R.id.go_back)
-        goBack.setOnClickListener{
-            finish()
-        }
+        goBack.setOnClickListener { finish() }
     }
 
-    private fun editEmpty(edit: EditText): Boolean {
-        return edit.text.toString().trim().isEmpty()
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@SignUp2)
+            .setMessage("¿Salir de la aplicación?")
+            .setCancelable(false)
+            .setPositiveButton("Si") { dialog, whichButton ->
+                finishAffinity() //Sale de la aplicación.
+            }
+            .setNegativeButton("Cancelar") { dialog, whichButton ->
+
+            }
+            .show()
     }
 }

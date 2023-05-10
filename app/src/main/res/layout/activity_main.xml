@@ -9,14 +9,17 @@
 
   <TextView
     android:id="@+id/my_label"
-    android:layout_width="425dp"
-    android:layout_height="550dp"
-    android:layout_marginTop="284dp"
-    android:background="@drawable/borderedondo"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="330dp"
+    android:background="@drawable/form_background"
     android:padding="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
 
   <TextView
     android:id="@+id/textView2"
@@ -26,40 +29,38 @@
     android:text="BIENVENIDO"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="@color/white"
-    android:textSize="32dp"
-    app:layout_constraintBottom_toBottomOf="parent"
+    android:textSize="32sp"
+    app:layout_constraintBottom_toTopOf="@+id/signUp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.459" />
+    app:layout_constraintTop_toTopOf="@id/my_label"
+    app:layout_constraintVertical_bias="0.185"
+    app:layout_constraintHorizontal_bias="0.5"/>
 
   <Button
-    android:id="@+id/signup"
-    android:layout_width="244dp"
-    android:layout_height="53.75dp"
-    android:background="@drawable/botonredondo"
+    android:id="@+id/signUp"
+    android:layout_width="245dp"
+    android:layout_height="55dp"
+    android:background="@drawable/button_background_primary"
     android:fontFamily="@font/droid_sans_bold"
-    android:onClick="signup"
     android:text="Regístrate"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textColor="@color/white"
     android:textSize="20sp"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/logIn"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
+    app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView2"
-    app:layout_constraintVertical_bias="0.265" />
+    app:layout_constraintVertical_bias="0.5" />
 
   <Button
-    android:id="@+id/signUp"
-    android:layout_width="244dp"
-    android:layout_height="53.75dp"
-    android:background="@drawable/botonredondo"
+    android:id="@+id/logIn"
+    android:layout_width="245dp"
+    android:layout_height="55dp"
+    android:background="@drawable/button_background_secondary"
     android:backgroundTint="@color/white"
     android:fontFamily="@font/droid_sans_bold"
-    android:onClick="login"
     android:text="Iniciar sesión"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textColor="#28A6A6"
@@ -68,7 +69,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.497"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView2"
+    app:layout_constraintTop_toBottomOf="@+id/signUp"
     app:layout_constraintVertical_bias="0.706" />
 
   <TextView
@@ -79,11 +80,11 @@
     android:text="¿Ya tienes cuenta?"
     android:textColor="@color/white"
     android:textSize="16sp"
-    app:layout_constraintBottom_toTopOf="@+id/signUp"
+    app:layout_constraintBottom_toTopOf="@+id/logIn"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.307"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/signup"
+    app:layout_constraintTop_toBottomOf="@+id/signUp"
     app:layout_constraintVertical_bias="0.872" />
 
   <ImageView
@@ -94,6 +95,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/logo_principal" />
+    app:srcCompat="@drawable/logo_principal"
+    android:contentDescription="Logo de la app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

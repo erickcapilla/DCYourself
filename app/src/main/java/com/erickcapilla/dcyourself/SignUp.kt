@@ -7,12 +7,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.erickcapilla.dcyourself.model.UIModel
+
 
 class SignUp : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+
+        val uiModel = UIModel()
 
         val editName = findViewById<EditText>(R.id.editName)
         val editLastName = findViewById<EditText>(R.id.editLastName)
@@ -21,17 +26,14 @@ class SignUp : AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
 
         next.setOnClickListener {
-            if(!editEmpty(editName) || !editEmpty(editLastName) || !editEmpty(editLastName2)) {
+            if(!uiModel.isEditEmpty(listOf(editName, editLastName, editLastName2))) {
                 val change = Intent(this, SignUp2::class.java)
-                /*
-                * Se envían los datos de este Activity al siguiente activity
-                * */
                 change.putExtra("name", editName.text.toString())
                 change.putExtra("lastName", editLastName.text.toString())
                 change.putExtra("lastName2", editLastName2.text.toString())
                 startActivity(change)
             } else {
-                Toast.makeText(applicationContext, "Ingresa todos los datos que se solicitan", Toast.LENGTH_SHORT).show()
+                uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
             }
 
         }
@@ -42,12 +44,17 @@ class SignUp : AppCompatActivity() {
         }
     }
 
-    /*
-    * Campo vacío
-    * @param edit Se refiere al campo a verificar
-    * @return Esta función retorna si el campo esta vacío. Retorna un valor Boleano
-    * */
-    private fun editEmpty(edit: EditText): Boolean {
-        return edit.text.toString().trim().isEmpty()
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@SignUp)
+            .setMessage("¿Salir de la aplicación?")
+            .setCancelable(false)
+            .setPositiveButton("Si") { dialog, whichButton ->
+                finishAffinity() //Sale de la aplicación.
+            }
+            .setNegativeButton("Cancelar") { dialog, whichButton ->
+
+            }
+            .show()
     }
 }

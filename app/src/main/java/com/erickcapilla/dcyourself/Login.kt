@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.erickcapilla.dcyourself.model.UIModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -22,22 +24,33 @@ class Login : AppCompatActivity() {
         val editEmail = findViewById<EditText>(R.id.editEmail)
         val editPassword = findViewById<EditText>(R.id.editPassword)
 
+        val uiModel = UIModel()
 
         val login = findViewById<Button>(R.id.logIn)
         login.setOnClickListener {
-            if(!editEmpty(editEmail) || !editEmpty(editPassword)) {
-                auth.signInWithEmailAndPassword(editEmail.text.toString(),
-                    editPassword.text.toString()).addOnCompleteListener(this) {
-                    if(it.isSuccessful) {
-                        val change = Intent(this, Home::class.java)
-                        startActivity(change)
-                    } else {
-                        Toast.makeText(applicationContext, "Se ha producido un error, Vuelve a intentarlo",
-                            Toast.LENGTH_SHORT).show()
-                    }
-                }
+            val email: String
+            val password: String
+
+            if(uiModel.isEditEmpty(listOf(editEmail, editPassword))) {
+                uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
+                return@setOnClickListener
             } else {
-                Toast.makeText(applicationContext, "Ingresa todos los datos que se solicitan", Toast.LENGTH_SHORT).show()
+                email = editEmail.text.toString()
+                password = editPassword.text.toString()
+            }
+
+            if(!uiModel.isEmailValid(email)) {
+                uiModel.showToast(applicationContext, "Email no valido")
+                return@setOnClickListener
+            }
+
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
+                if(it.isSuccessful) {
+                    val change = Intent(this, Home::class.java)
+                    startActivity(change)
+                } else {
+                    uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
+                }
             }
         }
 
@@ -49,16 +62,21 @@ class Login : AppCompatActivity() {
 
         val goBack = findViewById<Button>(R.id.go_back)
         goBack.setOnClickListener{
-            finish()
+            val change = Intent(this, MainActivity::class.java)
+            startActivity(change)
         }
     }
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@Login)
+            .setMessage("¿Salir de la aplicación?")
+            .setCancelable(false)
+            .setPositiveButton("Si") { dialog, whichButton ->
+                finishAffinity() //Sale de la aplicación.
+            }
+            .setNegativeButton("Cancelar") { dialog, whichButton ->
 
-    /*
-    * Campo vacío
-    * @param edit Se refiere al campo a verificar
-    * @return Esta función retorna si el campo esta vacío. Retorna un valor Boleano
-    * */
-    private fun editEmpty(edit: EditText): Boolean {
-        return edit.text.toString().trim().isEmpty()
+            }
+            .show()
     }
 }

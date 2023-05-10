@@ -4,29 +4,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import androidx.appcompat.app.AlertDialog
+import com.erickcapilla.dcyourself.provider.services.firebase.FBAuth
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1000)
-
         setTheme(R.style.Theme_DCYour)
-
-        /*
-        * Se revisa si un usuario tiene sesión activa
-        * */
-        val user = Firebase.auth.currentUser
-        if (user != null) {
-            val change = Intent(this, Home::class.java)
-            startActivity(change)
-        }
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val signup = findViewById<Button>(R.id.signup)
-        val login = findViewById<Button>(R.id.signUp)
+        val firebaseAuth = FBAuth()
+        if (firebaseAuth.isUserLogged()) {
+            val change = Intent(this, Home::class.java)
+            startActivity(change)
+        } else {
+            setup()
+        }
+
+    }
+
+    private fun setup() {
+        val signup = findViewById<Button>(R.id.signUp)
+        val login = findViewById<Button>(R.id.logIn)
 
         signup.setOnClickListener {
             val change = Intent(this, SignUp::class.java)
@@ -37,5 +38,19 @@ class MainActivity : AppCompatActivity() {
             val change = Intent(this, Login::class.java)
             startActivity(change)
         }
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@MainActivity)
+            .setMessage("¿Salir de la aplicación?")
+            .setCancelable(false)
+            .setPositiveButton("Si") { dialog, whichButton ->
+                finishAffinity() //Sale de la aplicación.
+            }
+            .setNegativeButton("Cancelar") { dialog, whichButton ->
+
+            }
+            .show()
     }
 }
