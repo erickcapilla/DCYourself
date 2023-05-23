@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -22,9 +22,8 @@ class WeightHeight : AppCompatActivity() {
         val editWeight = findViewById<EditText>(R.id.editWeight)
         val nextButton = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.go_back)
-        val logoutButton = findViewById<ImageButton>(R.id.logOut)
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
 
         nextButton.setOnClickListener {
             if(!uiModel.isEditEmpty(listOf(editHeight, editWeight))) {
@@ -39,11 +38,6 @@ class WeightHeight : AppCompatActivity() {
             }
         }
 
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val change = Intent(this, MainActivity::class.java)
-            startActivity(change)
-        }
         goBack.setOnClickListener { finish() }
     }
 

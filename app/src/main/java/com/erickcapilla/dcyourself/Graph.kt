@@ -28,24 +28,31 @@ class Graph : AppCompatActivity() {
                 R.id.bottom_recommend -> {
                     val change = Intent(this, Recommendations::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }
                 R.id.bottom_diagnose -> {
                     val change = Intent(this, Diagnose::class.java)
                     startActivity(change)
-                    finish()
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     true
                 }
                 R.id.bottom_home -> {
                     val change = Intent(this, Home::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }
                 R.id.bottom_med -> {
                     val change = Intent(this, Medicines::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -22,10 +22,9 @@ class Exercise : AppCompatActivity() {
         val threeBtn = findViewById<Button>(R.id.threeBtn)
         val fiveBtn = findViewById<Button>(R.id.fiveBtn)
         val nextButton = findViewById<Button>(R.id.next)
-        val logoutButton = findViewById<ImageButton>(R.id.logOut)
         val goBack = findViewById<Button>(R.id.go_back)
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
 
         nextButton.isEnabled = false
         nextButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
@@ -115,12 +114,6 @@ class Exercise : AppCompatActivity() {
             startActivity(change)
         }
 
-
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val change = Intent(this, MainActivity::class.java)
-            startActivity(change)
-        }
         goBack.setOnClickListener { finish() }
     }
 

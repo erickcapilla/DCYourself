@@ -1,4 +1,4 @@
-package com.erickcapilla.dcyourself
+package com.erickcapilla.dcyourself.util
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -6,6 +6,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
+import com.erickcapilla.dcyourself.R
 import java.util.Calendar
 
 class DatePickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit): DialogFragment(),

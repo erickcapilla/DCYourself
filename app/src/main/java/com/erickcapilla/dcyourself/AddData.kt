@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.UIUtils
 
 class AddData : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_data)
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
         val editGlucose = findViewById<EditText>(R.id.editGlucose)
         val editHemoglobin = findViewById<EditText>(R.id.editHemoglobin)
         val editInsulin= findViewById<EditText>(R.id.editInsulin)

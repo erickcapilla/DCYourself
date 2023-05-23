@@ -6,9 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.UIUtils
 
 
 class SignUp : AppCompatActivity() {
@@ -17,7 +16,7 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
 
         val editName = findViewById<EditText>(R.id.editName)
         val editLastName = findViewById<EditText>(R.id.editLastName)
@@ -28,14 +27,13 @@ class SignUp : AppCompatActivity() {
         next.setOnClickListener {
             if(!uiModel.isEditEmpty(listOf(editName, editLastName, editLastName2))) {
                 val change = Intent(this, SignUp2::class.java)
-                change.putExtra("name", editName.text.toString())
-                change.putExtra("lastName", editLastName.text.toString())
-                change.putExtra("lastName2", editLastName2.text.toString())
+                change.putExtra("name", editName.text.toString().trim())
+                change.putExtra("lastName", editLastName.text.toString().trim())
+                change.putExtra("lastName2", editLastName2.text.toString().trim())
                 startActivity(change)
             } else {
                 uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
             }
-
         }
 
         val goBack = findViewById<Button>(R.id.go_back)
@@ -53,7 +51,6 @@ class SignUp : AppCompatActivity() {
                 finishAffinity() //Sale de la aplicación.
             }
             .setNegativeButton("Cancelar") { dialog, whichButton ->
-
             }
             .show()
     }

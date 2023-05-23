@@ -4,7 +4,173 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="#7378DFDF"
   tools:context=".UpdateMedicines">
+
+  <ImageView
+    android:id="@+id/imageView17"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    android:background="#00FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/logo_secundario" />
+
+  <TextView
+    android:id="@+id/textTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="30dp"
+    android:textColor="#155959"
+    android:text="Editar medicamento"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="24sp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imageView17"
+    />
+
+  <View
+    android:id="@+id/background"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginVertical="30dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/form_background_second"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+    />
+
+  <EditText
+    android:id="@+id/editName"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="40dp"
+    android:layout_marginTop="35dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Nombre"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@id/background"
+    app:layout_constraintTop_toTopOf="@id/background"
+    android:inputType="text"
+    />
+
+  <EditText
+    android:id="@+id/editDose"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Dosis"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toStartOf="@id/editFrequency"
+    app:layout_constraintTop_toBottomOf="@id/editName"
+    app:layout_constraintBottom_toTopOf="@+id/editTime"
+    android:inputType="text"
+    />
+
+  <EditText
+    android:id="@+id/editFrequency"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Frecuencia"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toEndOf="@+id/editDose"
+    app:layout_constraintEnd_toEndOf="@id/background"
+    app:layout_constraintTop_toBottomOf="@id/editName"
+    app:layout_constraintBottom_toTopOf="@+id/editTime"
+    android:inputType="text"
+    />
+
+  <EditText
+    android:id="@+id/editTime"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="40dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Tiempo a consumir"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@id/background"
+    app:layout_constraintTop_toBottomOf="@id/editDose"
+    app:layout_constraintBottom_toTopOf="@+id/editTotal"
+    android:inputType="text"
+    />
+
+  <EditText
+    android:id="@+id/editTotal"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="40dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Cantidad total"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@id/background"
+    app:layout_constraintTop_toBottomOf="@id/editTime"
+    app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
+    android:inputType="text"
+    />
+
+  <Button
+    android:id="@+id/buttonDelete"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="10dp"
+    android:text="Eliminar"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#28A6A6"
+    android:textSize="18sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/button_background_secondary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toStartOf="@+id/buttonUpdate"
+    app:layout_constraintBottom_toBottomOf="@+id/background"/>
+
+  <Button
+    android:id="@+id/buttonUpdate"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginStart="10dp"
+    android:text="Actualizar"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/button_background_primary"
+    app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="@+id/background"/>
 
 
   <com.google.android.material.bottomnavigation.BottomNavigationView

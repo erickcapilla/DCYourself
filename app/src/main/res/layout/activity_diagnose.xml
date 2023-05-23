@@ -71,7 +71,8 @@
     android:background="@drawable/button_background_secondary"
     android:fontFamily="@font/droid_sans"
     android:hint="Glucosa"
-    android:inputType="numberDecimal"
+    android:inputType="number"
+    android:maxLength="3"
     android:paddingStart="10dp"
     android:textSize="16sp"
     app:layout_constraintBottom_toTopOf="@+id/editHemoglobin"
@@ -82,6 +83,18 @@
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry" />
 
+  <ImageButton
+    android:id="@+id/device"
+    android:layout_width="50dp"
+    android:layout_height="0dp"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="8dp"
+    android:src="@drawable/baseline_contactless_24"
+    android:background="#00000000"
+    app:layout_constraintEnd_toEndOf="@+id/editGlucose"
+    app:layout_constraintTop_toTopOf="@+id/editGlucose"
+    app:layout_constraintBottom_toBottomOf="@+id/editGlucose"/>
+
   <EditText
     android:id="@+id/editHemoglobin"
     android:layout_width="314dp"
@@ -90,6 +103,7 @@
     android:fontFamily="@font/droid_sans"
     android:hint="Hemoglobina"
     android:inputType="numberDecimal"
+    android:maxLength="4"
     android:paddingStart="10dp"
     android:textSize="16sp"
     app:layout_constraintTop_toBottomOf="@+id/editGlucose"
@@ -107,7 +121,8 @@
     android:background="@drawable/button_background_secondary"
     android:fontFamily="@font/droid_sans"
     android:hint="Insulina"
-    android:inputType="numberDecimal"
+    android:inputType="number"
+    android:maxLength="3"
     android:paddingStart="10dp"
     android:textSize="16sp"
     app:layout_constraintBottom_toTopOf="@+id/go_back"
@@ -153,18 +168,6 @@
 
   <ImageButton
     android:background="#00FFFFFF"
-    android:id="@+id/logOut"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.05"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/sign_out" />
-
-  <ImageButton
-    android:background="#00FFFFFF"
     android:id="@+id/help"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -173,6 +176,6 @@
     app:layout_constraintHorizontal_bias="0.95"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/question" />
+    app:srcCompat="@drawable/baseline_help_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

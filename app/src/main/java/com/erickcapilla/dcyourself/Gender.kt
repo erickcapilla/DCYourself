@@ -50,13 +50,6 @@ class Gender : AppCompatActivity() {
             val change = Intent(this, BirthDate::class.java)
             startActivity(change)
         }
-
-        val logoutButton = findViewById<ImageButton>(R.id.logOut)
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val change = Intent(this, MainActivity::class.java)
-            startActivity(change)
-        }
     }
 
     private fun saveData (data: String) {

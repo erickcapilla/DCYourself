@@ -4,7 +4,113 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="#7378DFDF"
   tools:context=".Recommendations">
+
+  <ImageView
+    android:id="@+id/imageView17"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    android:background="#00FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/logo_secundario" />
+
+  <TextView
+    android:id="@+id/textTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#155959"
+    android:text="Nutrimentales"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="24sp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imageView17"
+    app:layout_constraintBottom_toTopOf="@+id/viewPagerNutritional"
+    />
+
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/viewPagerNutritional"
+    android:layout_width="0dp"
+    android:layout_height="160dp"
+    android:layout_marginHorizontal="20dp"
+    android:overScrollMode="never"
+    android:clipToPadding="false"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+    app:layout_constraintBottom_toTopOf="@+id/pageIndicatorNutritional"/>
+
+  <com.rd.PageIndicatorView
+    android:id="@+id/pageIndicatorNutritional"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="40dp"
+    android:layout_centerInParent="true"
+    app:piv_animationType="worm"
+    app:piv_dynamicCount="true"
+    app:piv_interactiveAnimation="true"
+    app:piv_selectedColor="#28A6A6"
+    app:piv_padding="20dp"
+    app:piv_unselectedColor="@color/white"
+    app:piv_viewPager="@id/viewPagerNutritional"
+    app:layout_constraintTop_toBottomOf="@+id/viewPagerNutritional"
+    app:layout_constraintEnd_toEndOf="@+id/viewPagerNutritional"
+    app:layout_constraintStart_toStartOf="@+id/viewPagerNutritional"
+    app:layout_constraintBottom_toTopOf="@+id/textTitleExercise"
+    android:background="@drawable/form_background_second"/>
+
+  <TextView
+    android:id="@+id/textTitleExercise"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#155959"
+    android:text="Activación física"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="24sp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/pageIndicatorNutritional"
+    app:layout_constraintBottom_toTopOf="@+id/viewPagerExercise"
+    />
+
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/viewPagerExercise"
+    android:layout_width="0dp"
+    android:layout_height="160dp"
+    android:layout_marginHorizontal="20dp"
+    android:overScrollMode="never"
+    android:clipToPadding="false"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textTitleExercise"
+    app:layout_constraintBottom_toTopOf="@+id/pageIndicatorExercise"/>
+
+  <com.rd.PageIndicatorView
+    android:id="@+id/pageIndicatorExercise"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="40dp"
+    android:layout_centerInParent="true"
+    app:piv_animationType="worm"
+    app:piv_dynamicCount="true"
+    app:piv_interactiveAnimation="true"
+    app:piv_selectedColor="#28A6A6"
+    app:piv_padding="20dp"
+    app:piv_unselectedColor="@color/white"
+    app:piv_viewPager="@id/viewPagerExercise"
+    app:layout_constraintTop_toBottomOf="@+id/viewPagerExercise"
+    app:layout_constraintEnd_toEndOf="@+id/viewPagerExercise"
+    app:layout_constraintStart_toStartOf="@+id/viewPagerExercise"
+    app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+    android:background="@drawable/form_background_second" />
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"

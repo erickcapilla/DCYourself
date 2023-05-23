@@ -31,7 +31,6 @@ class Preferences : AppCompatActivity() {
                 R.id.bottom_diagnose -> {
                     val change = Intent(this, Diagnose::class.java)
                     startActivity(change)
-                    finish()
                     true
                 }
                 R.id.bottom_home -> {

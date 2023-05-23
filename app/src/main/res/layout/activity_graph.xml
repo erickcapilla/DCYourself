@@ -18,17 +18,6 @@
     app:layout_constraintStart_toStartOf="parent"
     app:srcCompat="@drawable/logo_secundario" />
 
-  <ImageButton
-    android:id="@+id/logOut"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:background="#00FFFFFF"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/sign_out" />
-
   <ImageView
     android:id="@+id/imageState"
     android:layout_width="wrap_content"

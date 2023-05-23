@@ -1,30 +1,51 @@
 package com.erickcapilla.dcyourself
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import androidx.appcompat.app.AppCompatActivity
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         auth = Firebase.auth
 
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val progressTitle = findViewById<TextView>(R.id.progressTitle)
         val editEmail = findViewById<EditText>(R.id.editEmail)
         val editPassword = findViewById<EditText>(R.id.editPassword)
 
-        val uiModel = UIModel()
+        val eyeButton = findViewById<ImageButton>(R.id.eyeButton)
+        var visibility = false
+
+        eyeButton.setOnClickListener {
+            if(visibility) {
+                visibility = false
+                editPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton.setImageResource(R.drawable.baseline_visibility_24)
+            } else {
+                visibility = true
+                editPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton.setImageResource(R.drawable.baseline_visibility_off_24)
+            }
+        }
+
+        val uiModel = UIUtils()
 
         val login = findViewById<Button>(R.id.logIn)
         login.setOnClickListener {
@@ -44,11 +65,25 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            //progressDialog.show()
+            progressTitle.visibility = View.VISIBLE
+            progressBar.visibility = View.VISIBLE
+            login.isEnabled = false
+            login.setBackgroundResource(R.drawable.button_backgroun_unenable)
+
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
                 if(it.isSuccessful) {
+                    //progressDialog.dismiss()
+                    progressBar.visibility = View.GONE
+                    progressTitle.visibility = View.GONE
                     val change = Intent(this, Home::class.java)
                     startActivity(change)
                 } else {
+                    //progressDialog.dismiss()
+                    login.isEnabled = true
+                    progressBar.visibility = View.GONE
+                    progressTitle.visibility = View.GONE
+                    login.setBackgroundResource(R.drawable.button_background_primary)
                     uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
                 }
             }

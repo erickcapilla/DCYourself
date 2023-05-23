@@ -1,17 +1,12 @@
 package com.erickcapilla.dcyourself
 
-import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.erickcapilla.dcyourself.provider.services.firebase.FBAuth
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -44,7 +39,7 @@ class Home : AppCompatActivity() {
             }
         }
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
         val docRefInfo = db.collection("info").document(email)
         val docRefUser = db.collection("user").document(email)
 
@@ -102,14 +97,6 @@ class Home : AppCompatActivity() {
             uiModel.showToast(applicationContext, "Error en la bd")
         }
 
-
-        val logoutButton = findViewById<ImageButton>(R.id.logOut)
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val change = Intent(this, MainActivity::class.java)
-            startActivity(change)
-        }
-
         val changePassword = findViewById<ImageButton>(R.id.changePassword)
         changePassword.setOnClickListener {
             val change = Intent(this, ChangePassword::class.java)
@@ -125,30 +112,45 @@ class Home : AppCompatActivity() {
                 R.id.bottom_data -> {
                     val change = Intent(this, Graph::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }
                 R.id.bottom_diagnose -> {
                     val change = Intent(this, Diagnose::class.java)
                     startActivity(change)
-                    finish()
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     true
                 }
                 R.id.bottom_recommend -> {
                     val change = Intent(this, Recommendations::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }
                 R.id.bottom_med -> {
                     val change = Intent(this, Medicines::class.java)
                     startActivity(change)
+                    change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                    overridePendingTransition(0,0)
                     finish()
                     true
                 }
                 else -> false
             }
         }
+
+        val outButton = findViewById<ImageButton>(R.id.log_out)
+        outButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val change = Intent(this, MainActivity::class.java)
+            startActivity(change)
+        }
+
     }
 
     @Deprecated("Deprecated in Java")

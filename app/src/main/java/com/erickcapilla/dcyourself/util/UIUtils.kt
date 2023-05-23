@@ -1,13 +1,10 @@
-package com.erickcapilla.dcyourself.model
+package com.erickcapilla.dcyourself.util
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
-import android.content.Intent
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 
-class UIModel {
+class UIUtils {
     fun isEditEmpty(edits: List<EditText>): Boolean {
         var empty : Boolean = false
         for (edit in edits) {

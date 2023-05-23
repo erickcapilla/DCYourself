@@ -202,20 +202,4 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.8"
     app:layout_constraintStart_toStartOf="parent" />
-
-
-
-  <ImageButton
-    android:background="#00FFFFFF"
-    android:id="@+id/logOut"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.048"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/sign_out" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

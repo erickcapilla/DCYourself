@@ -1,16 +1,17 @@
 package com.erickcapilla.dcyourself
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.text.InputType
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.EmailAuthCredential
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,54 +29,113 @@ class ChangePassword : AppCompatActivity() {
         val editPassword = findViewById<EditText>(R.id.editPassword)
         val editNewPassword = findViewById<EditText>(R.id.editNewPassword)
         val editConfirmPassword = findViewById<EditText>(R.id.editConfirmPassword)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val progressTitle = findViewById<TextView>(R.id.progressTitle)
+        val textForgot = findViewById<TextView>(R.id.forgotPassword)
+        val goBack = findViewById<Button>(R.id.go_back)
+
+        val uiModel = UIUtils()
 
         val upDateButton = findViewById<Button>(R.id.update)
         upDateButton.setOnClickListener {
-            if(!editEmpty(editPassword) || !editEmpty(editNewPassword) || !editEmpty(editConfirmPassword)) {
-                val email = user?.email
-                Log.d(TAG, email.toString())
-                val credential = EmailAuthProvider.getCredential(email.toString(), editPassword.text.toString())
+            if(uiModel.isEditEmpty(listOf(editPassword, editNewPassword, editConfirmPassword))) {
+                uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
+                return@setOnClickListener
+            }
 
-                user!!.reauthenticate(credential)
-                    .addOnCompleteListener(this) {
-                        if(it.isSuccessful) {
-                            /*
-                            * Se modifica la contraseña del usuario
-                            * @param password Nueva contraseña del usuario
-                            * */
-                            user!!.updatePassword(editNewPassword.text.toString())
-                                .addOnCompleteListener { task ->
-                                    if(task.isSuccessful) {
-                                        editPassword.setText("");
-                                        editNewPassword.setText("")
-                                        editConfirmPassword.setText("")
-                                        Toast.makeText(applicationContext, "Contraseña actualizada", Toast.LENGTH_SHORT).show()
-                                    }
+            progressTitle.visibility = View.VISIBLE
+            progressBar.visibility = View.VISIBLE
+            upDateButton.isEnabled = false
+            upDateButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            goBack.isEnabled = false
+            goBack.setBackgroundResource(R.drawable.button_backgroun_unenable)
+
+            val email = user?.email
+            val credential = EmailAuthProvider.getCredential(email.toString(), editPassword.text.toString())
+
+            user!!.reauthenticate(credential)
+                .addOnCompleteListener(this) {
+                    if(it.isSuccessful) {
+                        user.updatePassword(editNewPassword.text.toString())
+                            .addOnCompleteListener { task ->
+                                if(task.isSuccessful) {
+                                    uiModel.showToast(applicationContext, "Contraseña actualizada")
+                                    editPassword.setText("")
+                                    editNewPassword.setText("")
+                                    editConfirmPassword.setText("")
+                                    progressBar.visibility = View.GONE
+                                    progressTitle.visibility = View.GONE
+                                    upDateButton.isEnabled = true
+                                    upDateButton.setBackgroundResource(R.drawable.button_background_primary)
+                                    goBack.isEnabled = true
+                                    goBack.setBackgroundResource(R.drawable.button_background_secondary)
                                 }
-                        } else {
-                            Toast.makeText(applicationContext, "Se ha producido un error, Vuelve a intentarlo",
-                                Toast.LENGTH_SHORT).show()
-                        }
+                            }
+                    } else {
+                        uiModel.showToast(applicationContext, "Se ha producido un error, Vuelve a intentarlo")
+                        progressBar.visibility = View.GONE
+                        progressTitle.visibility = View.GONE
+                        upDateButton.isEnabled = true
+                        upDateButton.setBackgroundResource(R.drawable.button_background_primary)
+                        goBack.isEnabled = true
+                        goBack.setBackgroundResource(R.drawable.button_background_secondary)
                     }
+                }
+        }
+
+        val eyeButton = findViewById<ImageButton>(R.id.eyeButton)
+        var visibility = false
+
+        eyeButton.setOnClickListener {
+            if(visibility) {
+                visibility = false
+                editPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton.setImageResource(R.drawable.baseline_visibility_24)
             } else {
-                Toast.makeText(applicationContext, "Ingresa todos los datos que se solicitan", Toast.LENGTH_SHORT).show()
+                visibility = true
+                editPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton.setImageResource(R.drawable.baseline_visibility_off_24)
             }
         }
 
-        val textForgot = findViewById<TextView>(R.id.textForgot)
+        val eyeButton2 = findViewById<ImageButton>(R.id.eyeButton2)
+        var visibility2 = false
+
+        eyeButton2.setOnClickListener {
+            if(visibility2) {
+                visibility2 = false
+                editNewPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton2.setImageResource(R.drawable.baseline_visibility_24)
+            } else {
+                visibility2 = true
+                editNewPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton2.setImageResource(R.drawable.baseline_visibility_off_24)
+            }
+        }
+
+        val eyeButton3 = findViewById<ImageButton>(R.id.eyeButton3)
+        var visibility3 = false
+
+        eyeButton3.setOnClickListener {
+            if(visibility3) {
+                visibility3 = false
+                editConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton3.setImageResource(R.drawable.baseline_visibility_24)
+            } else {
+                visibility3 = true
+                editConfirmPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton3.setImageResource(R.drawable.baseline_visibility_off_24)
+            }
+        }
+
         textForgot.setOnClickListener {
             val change = Intent(this, RecoverPassword::class.java)
             startActivity(change)
         }
 
-        val goBack = findViewById<Button>(R.id.go_back)
         goBack.setOnClickListener{
             finish()
         }
-    }
-
-    private fun editEmpty(edit: EditText): Boolean {
-        return edit.text.toString().trim().isEmpty()
     }
 
     @Deprecated("Deprecated in Java")

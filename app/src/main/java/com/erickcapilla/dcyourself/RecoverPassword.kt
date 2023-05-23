@@ -1,16 +1,15 @@
 package com.erickcapilla.dcyourself
 
-import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.ActionCodeSettings
-import com.google.firebase.auth.EmailAuthProvider
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -24,53 +23,63 @@ class RecoverPassword : AppCompatActivity() {
 
 
         auth = Firebase.auth
+        val uiModel = UIUtils()
 
         val editEmail = findViewById<EditText>(R.id.editEmail)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val progressTitle = findViewById<TextView>(R.id.progressTitle)
+        val goBack = findViewById<Button>(R.id.go_back)
 
         val sendEmail = findViewById<Button>(R.id.next)
         sendEmail.setOnClickListener {
-            val email = editEmail.text.toString()
-            if(!editEmpty(editEmail)) {
-                /*
-                val user = auth.currentUser!!
-
-                val url = "http://dcyourself.firebaseapp.com/verify?uid=" + user.uid
-                val actionCodeSettings = ActionCodeSettings.newBuilder()
-                    .setUrl(url).setDynamicLinkDomain(url)
-                    .setAndroidPackageName("com.erickcapilla.dcyourself", false, null)
-                    .build()
-                 */
-                /*
-                * Envía correo al usuario para recuperar su contraseña
-                * */
-                auth!!.sendPasswordResetEmail(email)
-                    .addOnCompleteListener {
-                        if(it.isSuccessful) {
-                            Toast.makeText(this, "Email enviado. ¡Revisa tu correo!. Sesión finalizada", Toast.LENGTH_SHORT).show()
-
-                            goMain()
-                        } else {
-                            Toast.makeText(this, "Hubo un problema", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            } else {
-                Toast.makeText(applicationContext, "Ingresa tu correo", Toast.LENGTH_SHORT).show()
+            if(uiModel.isEditEmpty(listOf(editEmail))) {
+                uiModel.showToast(applicationContext, "Ingresa tu correo")
+                return@setOnClickListener
             }
+
+            val email = editEmail.text.toString()
+
+            if(!uiModel.isEmailValid(email)) {
+                uiModel.showToast(applicationContext, "Email no valido")
+                return@setOnClickListener
+            }
+
+            progressTitle.visibility = View.VISIBLE
+            progressBar.visibility = View.VISIBLE
+            sendEmail.isEnabled = false
+            sendEmail.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            goBack.isEnabled = false
+            goBack.setBackgroundResource(R.drawable.button_backgroun_unenable)
+
+            auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener {
+                    if(it.isSuccessful) {
+                        uiModel.showToast(this, "Email enviado. ¡Revisa tu correo!")
+                        editEmail.setText("")
+                        progressBar.visibility = View.GONE
+                        progressTitle.visibility = View.GONE
+                        sendEmail.isEnabled = true
+                        sendEmail.setBackgroundResource(R.drawable.button_background_primary)
+                        goBack.isEnabled = true
+                        goBack.setBackgroundResource(R.drawable.button_background_secondary)
+                    } else {
+                        uiModel.showToast(this, "Hubo un problema")
+                        editEmail.setText("")
+                        progressBar.visibility = View.GONE
+                        progressTitle.visibility = View.GONE
+                        sendEmail.isEnabled = true
+                        sendEmail.setBackgroundResource(R.drawable.button_background_primary)
+                        goBack.isEnabled = true
+                        goBack.setBackgroundResource(R.drawable.button_background_secondary)
+                    }
+                }
         }
 
-        val goBack = findViewById<Button>(R.id.go_back)
         goBack.setOnClickListener{
             finish()
         }
     }
 
-    private fun editEmpty(edit: EditText): Boolean {
-        return edit.text.toString().trim().isEmpty()
-    }
-
-    /*
-    * Regresa al Activity principal
-    * */
     private fun goMain() {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -86,7 +95,6 @@ class RecoverPassword : AppCompatActivity() {
                 finishAffinity() //Sale de la aplicación.
             }
             .setNegativeButton("Cancelar") { dialog, whichButton ->
-
             }
             .show()
     }

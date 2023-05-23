@@ -4,7 +4,77 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="#7378DFDF"
   tools:context=".Medicines">
+
+  <ImageView
+    android:id="@+id/imageView17"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    android:background="#00FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/logo_secundario" />
+
+  <TextView
+    android:id="@+id/textTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="30dp"
+    android:textColor="#155959"
+    android:text="Control de medicamentos"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="24sp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imageView17"
+    />
+
+  <TextView
+    android:id="@+id/background"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginVertical="30dp"
+    android:layout_marginHorizontal="20dp"
+    android:text=""
+    android:background="@drawable/form_background_second"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+    />
+
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycleView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="30dp"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+    app:layout_constraintTop_toTopOf="@+id/background"/>
+
+  <Button
+    android:id="@+id/buttonAdd"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginVertical="20dp"
+    android:layout_marginHorizontal="50dp"
+    android:text="Agregar"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/button_background_primary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="@+id/background"/>
+
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"

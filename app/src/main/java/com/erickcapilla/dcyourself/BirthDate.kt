@@ -8,7 +8,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.erickcapilla.dcyourself.model.UIModel
+import com.erickcapilla.dcyourself.util.DatePickerFragment
+import com.erickcapilla.dcyourself.util.UIUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -23,9 +24,8 @@ class BirthDate : AppCompatActivity() {
         val calendar = findViewById<EditText>(R.id.calendarView)
         val nextButton = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.go_back)
-        val logoutButton = findViewById<ImageButton>(R.id.logOut)
 
-        val uiModel = UIModel()
+        val uiModel = UIUtils()
 
         calendar.setOnClickListener{ showDatePickerDialog() }
 
@@ -38,11 +38,6 @@ class BirthDate : AppCompatActivity() {
             }
         }
 
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val change = Intent(this, MainActivity::class.java)
-            startActivity(change)
-        }
         goBack.setOnClickListener { finish() }
     }
 
@@ -53,7 +48,7 @@ class BirthDate : AppCompatActivity() {
 
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         if(year > 2020) {
-            val uiModel = UIModel()
+            val uiModel = UIUtils()
             uiModel.showToast(applicationContext, "Elige un año menor o igual a 2020")
         } else {
             val calendar = findViewById<EditText>(R.id.calendarView)
