@@ -64,7 +64,7 @@
     app:layout_constraintVertical_bias="0.774" />
 
   <Button
-    android:id="@+id/button2"
+    android:id="@+id/next"
     android:layout_width="244dp"
     android:layout_height="55dp"
     android:background="@drawable/botonredondo"

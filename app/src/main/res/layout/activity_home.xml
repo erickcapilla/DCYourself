@@ -13,7 +13,7 @@
     android:layout_height="50dp"
     android:layout_marginEnd="16dp"
     android:layout_marginTop="16dp"
-    android:background="@drawable/background_white"
+    android:background="@drawable/border_image"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/baseline_account_24" />
@@ -24,7 +24,7 @@
     android:layout_height="50dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
-    android:background="@drawable/background_white"
+    android:background="@drawable/border_image"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:srcCompat="@drawable/baseline_logout_24" />

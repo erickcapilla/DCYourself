@@ -6,7 +6,7 @@ import android.widget.Toast
 
 class UIUtils {
     fun isEditEmpty(edits: List<EditText>): Boolean {
-        var empty : Boolean = false
+        var empty = false
         for (edit in edits) {
             if (edit.text.toString().trim().isEmpty()) empty = true
         }
@@ -18,7 +18,7 @@ class UIUtils {
     }
 
     fun isEmailValid( email: String ): Boolean {
-        val EMAIL_REGEX = "^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})";
+        val EMAIL_REGEX = "^[A-Za-z0-9](.*)([@]{1})(.{1,})(\\.)(.{1,})"
         return EMAIL_REGEX.toRegex().matches(email);
     }
 }

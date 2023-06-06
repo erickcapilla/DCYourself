@@ -30,7 +30,7 @@
       android:id="@+id/questionText"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginHorizontal="15dp"
+      android:layout_marginHorizontal="4dp"
       android:text="¿Pregunta?"
       android:textColor="@color/black"
       android:textSize="14sp"
@@ -54,12 +54,11 @@
       app:layout_constraintHorizontal_bias="0.65"/>
 
     <RadioGroup
-      android:layout_width="0dp"
-      android:layout_height="0dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@+id/verticalLine"
-      android:paddingStart="10dp"
-      android:paddingVertical="3dp"
+      android:orientation="horizontal"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintBottom_toBottomOf="parent">
 
@@ -67,6 +66,7 @@
           android:id="@+id/radioButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+
           android:text="Si"
           android:textColor="#99000000"
           android:fontFamily="@font/droid_sans_bold"
@@ -80,15 +80,6 @@
           android:textColor="#99000000"
           android:fontFamily="@font/droid_sans_bold"
           android:buttonTint="#155959"/>
-
-        <RadioButton
-          android:id="@+id/radioButton3"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Tal vez"
-          android:textColor="#99000000"
-          android:fontFamily="@font/droid_sans_bold"
-          android:buttonTint="#155959" />
     </RadioGroup>
   </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

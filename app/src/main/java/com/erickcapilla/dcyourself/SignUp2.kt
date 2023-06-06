@@ -135,8 +135,27 @@ class SignUp2 : AppCompatActivity() {
                                     "weight" to "",
                                     "height" to "",
                                     "family" to "",
-                                    "exercise" to "",
-
+                                    "exercise" to ""
+                                ))
+                            db.collection("med").document(email)
+                                .set(hashMapOf(
+                                    "name" to "",
+                                    "total" to "",
+                                    "dose" to "",
+                                    "frequency" to "",
+                                    "dateOne" to "",
+                                    "dateTwo" to ""
+                                ))
+                            db.collection("data").document(email)
+                                .set(hashMapOf(
+                                    "glucose" to "",
+                                    "hemoglobin" to "",
+                                    "insulin" to ""
+                                ))
+                            db.collection("diagnosis").document(email)
+                                .set(hashMapOf(
+                                    "diabetic" to "",
+                                    "type" to ""
                                 ))
                         }
                     Firebase.auth.signOut()

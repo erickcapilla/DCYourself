@@ -1,5 +1,6 @@
 package com.erickcapilla.dcyourself.adapter
 
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ class RecommendationAdapter(private val recommendationList: MutableList<DataReco
         img.setImageResource(imgView)
         title.text = recommendationList[position].title
         description.text = recommendationList[position].description
+        description.movementMethod = ScrollingMovementMethod()
         container.addView(view, 0)
 
         return view

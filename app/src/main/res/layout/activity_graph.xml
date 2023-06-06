@@ -29,6 +29,7 @@
     app:layout_constraintTop_toBottomOf="@+id/imageView17"/>
 
   <TextView
+    android:id="@+id/status"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginVertical="10dp"
@@ -42,7 +43,128 @@
     app:layout_constraintTop_toBottomOf="@id/imageState"
     />
 
+  <View
+    android:id="@+id/horizontalLine"
+    android:layout_width="0dp"
+    android:layout_height="2dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="#155959"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="@+id/verticalLine"/>
+
+  <View
+    android:id="@+id/verticalLine"
+    android:layout_width="2dp"
+    android:layout_height="0dp"
+    android:layout_marginVertical="20dp"
+    android:background="#155959"
+    app:layout_constraintTop_toBottomOf="@+id/status"
+    app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.05"
+    />
+
   <TextView
+    android:id="@+id/glucoseText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:text="Glucosa"
+    android:textColor="#155959"
+    android:textSize="14sp"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/horizontalLine"
+    app:layout_constraintHorizontal_bias="0.2"
+ />
+
+  <TextView
+    android:id="@+id/hemoglobinText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:text="Hemoglobina"
+    android:textColor="#155959"
+    android:textSize="14sp"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/horizontalLine"
+    app:layout_constraintHorizontal_bias="0.55"
+    />
+
+  <TextView
+    android:id="@+id/insulinText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:text="Insulina"
+    android:textColor="#155959"
+    android:textSize="14sp"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/horizontalLine"
+    app:layout_constraintHorizontal_bias=".9"
+    />
+
+  <TextView
+    android:layout_width="75dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/graph_background"
+    android:text="200"
+    android:textAlignment="center"
+    android:paddingTop="10dp"
+    android:textColor="#155959"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+    app:layout_constraintTop_toTopOf="@+id/verticalLine"
+    app:layout_constraintStart_toStartOf="@+id/glucoseText"
+    app:layout_constraintEnd_toEndOf="@+id/glucoseText"
+    />
+
+  <TextView
+    android:layout_width="75dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/graph_background"
+    android:text="6%"
+    android:textAlignment="center"
+    android:paddingTop="10dp"
+    android:textColor="#155959"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+    app:layout_constraintTop_toTopOf="@+id/verticalLine"
+    app:layout_constraintStart_toStartOf="@+id/hemoglobinText"
+    app:layout_constraintEnd_toEndOf="@+id/hemoglobinText"
+    />
+
+  <TextView
+    android:layout_width="75dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="50dp"
+    android:background="@drawable/graph_background"
+    android:text="60"
+    android:textAlignment="center"
+    android:paddingTop="10dp"
+    android:textColor="#155959"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+    app:layout_constraintTop_toTopOf="@+id/verticalLine"
+    app:layout_constraintStart_toStartOf="@+id/insulinText"
+    app:layout_constraintEnd_toEndOf="@+id/insulinText"
+    />
+
+  <TextView
+    android:id="@+id/userState"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="30dp"

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#7378DFDF"
+  tools:context=".Profile">
+
+  <ImageView
+    android:id="@+id/imageView17"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="16dp"
+    android:background="#00FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/logo_secundario" />
+
+  <TextView
+    android:id="@+id/userName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:textColor="#155959"
+    android:text=""
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="24sp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imageView17"
+    />
+
+  <View
+    android:id="@+id/background"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginVertical="30dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/form_background_second"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/goBack"
+    app:layout_constraintTop_toBottomOf="@+id/userName"
+    />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/personal"
+    android:layout_width="0dp"
+    android:layout_height="70dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginHorizontal="30dp"
+    android:background="@drawable/button_background_secondary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintTop_toTopOf="@+id/background" >
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+          android:id="@+id/image"
+          android:layout_width="50dp"
+          android:layout_height="0dp"
+          android:layout_marginVertical="8dp"
+          android:background="@drawable/border_image"
+          android:src="@drawable/baseline_person_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintHorizontal_bias="0.05"
+          />
+        <TextView
+          android:id="@+id/title"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="20dp"
+          android:text="Información personal"
+          android:textColor="@color/black"
+          android:textAlignment="center"
+          android:textSize="16sp"
+          android:fontFamily="@font/droid_sans_bold"
+          app:layout_constraintStart_toEndOf="@+id/image"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/account"
+    android:layout_width="0dp"
+    android:layout_height="70dp"
+    android:layout_marginHorizontal="30dp"
+    android:background="@drawable/button_background_secondary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toTopOf="@+id/preferences"
+    app:layout_constraintTop_toBottomOf="@+id/personal" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <ImageView
+        android:id="@+id/imagePersonal"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/border_image"
+        android:src="@drawable/baseline_manage_accounts_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        />
+      <TextView
+        android:id="@+id/titlePesonal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Cambiar contraseña"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/droid_sans_bold"
+        app:layout_constraintStart_toEndOf="@+id/imagePersonal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/preferences"
+    android:layout_width="0dp"
+    android:layout_height="70dp"
+    android:layout_marginHorizontal="30dp"
+    android:background="@drawable/button_background_secondary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toTopOf="@+id/logOut"
+    app:layout_constraintTop_toBottomOf="@+id/account"
+    android:visibility="invisible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <ImageView
+        android:id="@+id/imagePreferences"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/border_image"
+        android:src="@drawable/baseline_recommend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        />
+      <TextView
+        android:id="@+id/titlePreferences"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Preferencias (Recomendaciones)"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/droid_sans_bold"
+        app:layout_constraintStart_toEndOf="@+id/imagePreferences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+  <Button
+    android:id="@+id/logOut"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginVertical="20dp"
+    android:layout_marginHorizontal="50dp"
+    android:text="Cerrar sesión"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/button_background_primary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toTopOf="@+id/deleteAccount"/>
+
+  <Button
+    android:id="@+id/deleteAccount"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginVertical="30dp"
+    android:layout_marginHorizontal="50dp"
+    android:text="Eliminar cuenta"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#FF0000"
+    android:textSize="20sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/button_background_secondary"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="@+id/background"/>
+
+  <Button
+    android:id="@+id/goBack"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginVertical="20dp"
+    android:layout_marginHorizontal="50dp"
+    android:text="Atrás"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:fontFamily="@font/droid_sans_bold"
+    android:background="@drawable/background_home"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <EditText
+    android:id="@+id/editText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Confirma con tu contraseña"
+    android:visibility="invisible"
+    tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

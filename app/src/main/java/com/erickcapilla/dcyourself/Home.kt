@@ -99,7 +99,7 @@ class Home : AppCompatActivity() {
 
         val changePassword = findViewById<ImageButton>(R.id.changePassword)
         changePassword.setOnClickListener {
-            val change = Intent(this, ChangePassword::class.java)
+            val change = Intent(this, Profile::class.java)
             startActivity(change)
         }
 
