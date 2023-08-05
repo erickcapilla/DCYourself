@@ -16,14 +16,14 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/logo_secundario" />
+    app:srcCompat="@drawable/img_logo_secondary" />
 
   <ImageView
     android:id="@+id/imageState"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginVertical="30dp"
-    android:src="@drawable/feliz"
+    android:src="@drawable/img_happy_face"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/imageView17"/>
@@ -118,7 +118,7 @@
     android:layout_height="0dp"
     android:layout_marginBottom="10dp"
     android:layout_marginTop="5dp"
-    android:background="@drawable/graph_background"
+    android:background="@drawable/background_graph"
     android:text=""
     android:textAlignment="center"
     android:paddingTop="10dp"
@@ -136,7 +136,7 @@
     android:layout_height="0dp"
     android:layout_marginTop="150dp"
     android:layout_marginBottom="10dp"
-    android:background="@drawable/graph_background"
+    android:background="@drawable/background_graph"
     android:text=""
     android:textAlignment="center"
     android:paddingTop="10dp"
@@ -154,7 +154,7 @@
     android:layout_height="0dp"
     android:layout_marginBottom="10dp"
     android:layout_marginTop="50dp"
-    android:background="@drawable/graph_background"
+    android:background="@drawable/background_graph"
     android:text=""
     android:textAlignment="center"
     android:paddingTop="10dp"
@@ -206,7 +206,7 @@
     android:scaleType="centerInside"
     app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
     app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@drawable/plus_boton" />
+    app:srcCompat="@drawable/img_button_plus" />
 
   <TextView
     android:id="@+id/textButton"
@@ -228,7 +228,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_constraintBottom_toBottomOf="parent"
-    android:background="@drawable/bottom_background"
+    android:background="@drawable/background_bottom"
     android:layout_marginHorizontal="20dp"
     android:layout_marginBottom="40dp"
     android:elevation="2dp"

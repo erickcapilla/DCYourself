@@ -16,7 +16,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/logo_secundario" />
+    app:srcCompat="@drawable/img_logo_secondary" />
 
   <TextView
     android:id="@+id/userName"
@@ -39,7 +39,7 @@
     android:layout_height="0dp"
     android:layout_marginVertical="30dp"
     android:layout_marginHorizontal="20dp"
-    android:background="@drawable/form_background_second"
+    android:background="@drawable/background_form_second"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/goBack"
@@ -52,7 +52,7 @@
     android:layout_height="70dp"
     android:layout_marginTop="30dp"
     android:layout_marginHorizontal="30dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintTop_toTopOf="@+id/background" >
@@ -97,7 +97,7 @@
     android:layout_width="0dp"
     android:layout_height="70dp"
     android:layout_marginHorizontal="30dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toTopOf="@+id/preferences"
@@ -143,7 +143,7 @@
     android:layout_width="0dp"
     android:layout_height="70dp"
     android:layout_marginHorizontal="30dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toTopOf="@+id/logOut"
@@ -196,7 +196,7 @@
     android:textColor="@color/white"
     android:textSize="20sp"
     android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toTopOf="@+id/deleteAccount"/>
@@ -212,7 +212,7 @@
     android:textColor="#FF0000"
     android:textSize="20sp"
     android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toBottomOf="@+id/background"/>

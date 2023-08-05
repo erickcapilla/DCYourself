@@ -17,7 +17,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.133"
-    app:srcCompat="@drawable/logo_principal" />
+    app:srcCompat="@drawable/img_logo_principal" />
 
   <ImageView
     android:id="@+id/imageView13"
@@ -29,7 +29,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.541"
-    app:srcCompat="@drawable/mano" />
+    app:srcCompat="@drawable/img_finger_blood" />
 
   <TextView
     android:id="@+id/textType"
@@ -69,7 +69,7 @@
     android:id="@+id/next"
     android:layout_width="244dp"
     android:layout_height="55dp"
-    android:background="@drawable/botonredondo"
+    android:background="@drawable/background_button_secondary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Continuar"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"

@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import com.erickcapilla.dcyourself.util.UIUtils
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -27,82 +25,82 @@ class Exercise : AppCompatActivity() {
         val uiModel = UIUtils()
 
         nextButton.isEnabled = false
-        nextButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
+        nextButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
         var exercise = ""
 
         neverBtn.setOnClickListener {
             neverBtn.isEnabled = false
-            neverBtn.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            neverBtn.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             oneBtn.isEnabled = true
-            oneBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            oneBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             threeBtn.isEnabled = true
-            threeBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            threeBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             fiveBtn.isEnabled = true
-            fiveBtn.setBackgroundResource(R.drawable.button_background_info)
+            fiveBtn.setBackgroundResource(R.drawable.background_button_info)
 
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
 
             exercise = "Nunca"
         }
 
         oneBtn.setOnClickListener {
             oneBtn.isEnabled = false
-            oneBtn.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            oneBtn.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             neverBtn.isEnabled = true
-            neverBtn.setBackgroundResource(R.drawable.button_background_info)
+            neverBtn.setBackgroundResource(R.drawable.background_button_info)
 
             threeBtn.isEnabled = true
-            threeBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            threeBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             fiveBtn.isEnabled = true
-            fiveBtn.setBackgroundResource(R.drawable.button_background_info)
+            fiveBtn.setBackgroundResource(R.drawable.background_button_info)
 
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
 
             exercise = "1-2"
         }
 
         threeBtn.setOnClickListener {
             threeBtn.isEnabled = false
-            threeBtn.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            threeBtn.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             neverBtn.isEnabled = true
-            neverBtn.setBackgroundResource(R.drawable.button_background_info)
+            neverBtn.setBackgroundResource(R.drawable.background_button_info)
 
             oneBtn.isEnabled = true
-            oneBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            oneBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             fiveBtn.isEnabled = true
-            fiveBtn.setBackgroundResource(R.drawable.button_background_info)
+            fiveBtn.setBackgroundResource(R.drawable.background_button_info)
 
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
 
             exercise = "3-4"
         }
 
         fiveBtn.setOnClickListener {
             fiveBtn.isEnabled = false
-            fiveBtn.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            fiveBtn.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             neverBtn.isEnabled = true
-            neverBtn.setBackgroundResource(R.drawable.button_background_info)
+            neverBtn.setBackgroundResource(R.drawable.background_button_info)
 
             oneBtn.isEnabled = true
-            oneBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            oneBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             threeBtn.isEnabled = true
-            threeBtn.setBackgroundResource(R.drawable.button_background_secondary)
+            threeBtn.setBackgroundResource(R.drawable.background_button_secondary)
 
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
 
             exercise = "5-7"
         }

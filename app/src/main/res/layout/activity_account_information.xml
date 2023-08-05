@@ -16,7 +16,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/logo_secundario" />
+    app:srcCompat="@drawable/img_logo_secondary" />
 
   <TextView
     android:id="@+id/nameUser"
@@ -39,7 +39,7 @@
     android:layout_height="0dp"
     android:layout_marginVertical="30dp"
     android:layout_marginHorizontal="20dp"
-    android:background="@drawable/form_background_second"
+    android:background="@drawable/background_form_second"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/goBack"
@@ -66,7 +66,7 @@
     android:id="@+id/editEmail"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Correo electrónico"
@@ -84,7 +84,7 @@
     android:id="@+id/editEmailConfirm"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Confirmar correo electrónico"
@@ -109,7 +109,7 @@
     android:textSize="20sp"
     android:textColor="#28A6A6"
     android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toTopOf="@+id/next"/>
@@ -125,7 +125,7 @@
     android:textSize="20sp"
     android:textColor="@color/white"
     android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toBottomOf="@+id/background"/>

@@ -9,8 +9,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.marginTop
-import com.erickcapilla.dcyourself.model.DataMedicines
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -112,7 +110,7 @@ class Graph : AppCompatActivity() {
                     layoutParams.setMargins(layoutParams.leftMargin, 5, layoutParams.rightMargin, layoutParams.bottomMargin)
                     graph1.layoutParams = layoutParams
                     graph1.setBackgroundResource(R.drawable.graph_red)
-                    imgState.setImageResource(R.drawable.triste)
+                    imgState.setImageResource(R.drawable.img_triste)
                     status.text = "¡Tu estado de salud es malo!"
                     userState.text = "Riesgo Alto"
                 }
@@ -122,7 +120,7 @@ class Graph : AppCompatActivity() {
                     layoutParams.setMargins(layoutParams.leftMargin, 250, layoutParams.rightMargin, layoutParams.bottomMargin)
                     graph1.layoutParams = layoutParams
                     graph1.setBackgroundResource(R.drawable.graph_yellow)
-                    imgState.setImageResource(R.drawable.triste)
+                    imgState.setImageResource(R.drawable.img_triste)
                     status.text = "¡Tu estado de salud es regular!"
                     userState.text = "Riesgo Medio"
                 }
@@ -133,7 +131,7 @@ class Graph : AppCompatActivity() {
                     layoutParams.setMargins(layoutParams.leftMargin, 500, layoutParams.rightMargin, layoutParams.bottomMargin)
                     graph1.layoutParams = layoutParams
                     graph1.setBackgroundResource(R.drawable.graph_green)
-                    imgState.setImageResource(R.drawable.feliz)
+                    imgState.setImageResource(R.drawable.img_happy_face)
                     status.text = "¡Tu estado de salud es bueno!"
                     userState.text = "Riesgo Bajo"
                 }

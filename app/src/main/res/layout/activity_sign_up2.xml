@@ -12,7 +12,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginTop="200dp"
-    android:background="@drawable/form_background"
+    android:background="@drawable/background_form"
     android:padding="10dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.4"
     app:layout_constraintHorizontal_bias="0.5"
-    app:srcCompat="@drawable/logo_secundario"
+    app:srcCompat="@drawable/img_logo_secondary"
     android:contentDescription="Logo de la app" />
 
   <TextView
@@ -57,7 +57,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textSignUp"
     app:layout_constraintVertical_bias="0.5"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView4"
@@ -69,13 +69,13 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textSignUp"
     app:layout_constraintVertical_bias="0.5"
-    app:srcCompat="@drawable/indicator_active" />
+    app:srcCompat="@drawable/img_indicator_active" />
 
   <EditText
     android:id="@+id/editEmail"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Correo electrónico"
@@ -110,7 +110,7 @@
     android:id="@+id/editPassword"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Contraseña"
@@ -156,7 +156,7 @@
     android:id="@+id/editConfirmPassword"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Confirmar contraseña"
@@ -234,7 +234,7 @@
     android:layout_width="112dp"
     android:layout_height="56dp"
     android:layout_marginBottom="40dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Atrás"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -251,7 +251,7 @@
     android:layout_width="112dp"
     android:layout_height="56dp"
     android:layout_marginBottom="40dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Siguiente"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"

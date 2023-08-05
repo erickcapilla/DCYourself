@@ -10,7 +10,7 @@ import com.erickcapilla.dcyourself.provider.services.firebase.FBAuth
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_DCYour)
+        setTheme(R.style.Theme_DCYourself)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

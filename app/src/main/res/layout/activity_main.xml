@@ -12,7 +12,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginTop="330dp"
-    android:background="@drawable/form_background"
+    android:background="@drawable/background_form"
     android:padding="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
     android:id="@+id/signUp"
     android:layout_width="245dp"
     android:layout_height="55dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Regístrate"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -58,7 +58,7 @@
     android:id="@+id/logIn"
     android:layout_width="245dp"
     android:layout_height="55dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:backgroundTint="@color/white"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Iniciar sesión"
@@ -95,7 +95,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/logo_principal"
+    style="@style/PrincipalLogo"
     android:contentDescription="Logo de la app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

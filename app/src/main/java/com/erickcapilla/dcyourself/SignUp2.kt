@@ -136,9 +136,9 @@ class SignUp2 : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             signUp.isEnabled = false
-            signUp.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            signUp.setBackgroundResource(R.drawable.backgroun_button_unenable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            goBack.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             auth.createUserWithEmailAndPassword(editEmail.text.toString().trim(),
                 editPassword.text.toString()).addOnCompleteListener(this) { task ->
@@ -183,9 +183,9 @@ class SignUp2 : AppCompatActivity() {
                     signUp.isEnabled = true
                     progressBar.visibility = View.GONE
                     progressTitle.visibility = View.GONE
-                    signUp.setBackgroundResource(R.drawable.button_background_primary)
+                    signUp.setBackgroundResource(R.drawable.background_button_primary)
                     goBack.isEnabled = true
-                    goBack.setBackgroundResource(R.drawable.button_background_secondary)
+                    goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     uiModel.showToast(applicationContext, "Ya hay un usuario con este correo. Revisa tu conexión")
                 }
             }

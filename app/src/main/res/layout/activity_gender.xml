@@ -12,7 +12,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginTop="330dp"
-    android:background="@drawable/form_background"
+    android:background="@drawable/background_form"
     android:padding="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.3"
-    app:srcCompat="@drawable/logo"
+    app:srcCompat="@drawable/img_logo"
     android:contentDescription="Logo de la app"/>
 
   <TextView
@@ -58,7 +58,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_active" />
+    app:srcCompat="@drawable/img_indicator_active" />
 
   <ImageView
     android:id="@+id/imageView6"
@@ -70,7 +70,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView7"
@@ -82,7 +82,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView8"
@@ -94,7 +94,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView9"
@@ -106,20 +106,20 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageButton
     android:id="@+id/iBWoman"
     android:layout_width="150dp"
     android:layout_height="216dp"
-    android:background="@drawable/button_background_info"
+    android:background="@drawable/background_button_info"
     app:layout_constraintBottom_toTopOf="@+id/textView20"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toStartOf="@+id/iBMan"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.8"
     app:layout_constraintHorizontal_bias="0.5"
-    app:srcCompat="@drawable/mujer1" />
+    app:srcCompat="@drawable/img_woman" />
 
   <ImageButton
     android:id="@+id/iBMan"
@@ -131,8 +131,8 @@
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.8"
     app:layout_constraintHorizontal_bias="0.5"
-    android:background="@drawable/button_background_info"
-    app:srcCompat="@drawable/hombre1"
+    android:background="@drawable/background_button_info"
+    app:srcCompat="@drawable/img_man"
     tools:ignore="MissingConstraints" />
 
   <TextView
@@ -172,7 +172,7 @@
     android:layout_width="244dp"
     android:layout_height="53.75dp"
     android:layout_marginBottom="28dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Siguiente"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"

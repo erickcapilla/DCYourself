@@ -47,9 +47,9 @@ class RecoverPassword : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             sendEmail.isEnabled = false
-            sendEmail.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            sendEmail.setBackgroundResource(R.drawable.backgroun_button_unenable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            goBack.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
             auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener {
@@ -59,18 +59,18 @@ class RecoverPassword : AppCompatActivity() {
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         sendEmail.isEnabled = true
-                        sendEmail.setBackgroundResource(R.drawable.button_background_primary)
+                        sendEmail.setBackgroundResource(R.drawable.background_button_primary)
                         goBack.isEnabled = true
-                        goBack.setBackgroundResource(R.drawable.button_background_secondary)
+                        goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     } else {
                         uiModel.showToast(this, "Hubo un problema")
                         editEmail.setText("")
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         sendEmail.isEnabled = true
-                        sendEmail.setBackgroundResource(R.drawable.button_background_primary)
+                        sendEmail.setBackgroundResource(R.drawable.background_button_primary)
                         goBack.isEnabled = true
-                        goBack.setBackgroundResource(R.drawable.button_background_secondary)
+                        goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     }
                 }
         }

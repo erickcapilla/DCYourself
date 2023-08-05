@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import com.erickcapilla.dcyourself.util.UIUtils
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -26,9 +25,9 @@ class DiabetesFamily : AppCompatActivity() {
         val uiModel = UIUtils()
 
         nextButton.isEnabled = false
-        nextButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
+        nextButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
         editNumber.isEnabled = false
-        editNumber.setBackgroundResource(R.drawable.button_backgroun_unenable)
+        editNumber.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
         var family = ""
         var familyBool = false
@@ -37,11 +36,11 @@ class DiabetesFamily : AppCompatActivity() {
             noButton.isEnabled = false
             yesButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
-            noButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
-            yesButton.setBackgroundResource(R.drawable.button_background_info)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
+            noButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            yesButton.setBackgroundResource(R.drawable.background_button_info)
             editNumber.isEnabled = false
-            editNumber.setBackgroundResource(R.drawable.button_backgroun_unenable)
+            editNumber.setBackgroundResource(R.drawable.backgroun_button_unenable)
             family = "No"
             familyBool = false
         }
@@ -50,11 +49,11 @@ class DiabetesFamily : AppCompatActivity() {
             yesButton.isEnabled = false
             noButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
-            yesButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
-            noButton.setBackgroundResource(R.drawable.button_background_info)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
+            yesButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            noButton.setBackgroundResource(R.drawable.background_button_info)
             editNumber.isEnabled = true
-            editNumber.setBackgroundResource(R.drawable.button_background_secondary)
+            editNumber.setBackgroundResource(R.drawable.background_button_secondary)
             familyBool = true
         }
 

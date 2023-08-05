@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -21,7 +20,7 @@ class Gender : AppCompatActivity() {
         val nextButton = findViewById<Button>(R.id.next)
 
         nextButton.isEnabled = false
-        nextButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
+        nextButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
 
         var gender = ""
 
@@ -29,9 +28,9 @@ class Gender : AppCompatActivity() {
             manButton.isEnabled = false
             womanButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
-            manButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
-            womanButton.setBackgroundResource(R.drawable.button_background_info)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
+            manButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            womanButton.setBackgroundResource(R.drawable.background_button_info)
             gender = "Hombre"
         }
 
@@ -39,9 +38,9 @@ class Gender : AppCompatActivity() {
             womanButton.isEnabled = false
             manButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.button_background_primary)
-            womanButton.setBackgroundResource(R.drawable.button_backgroun_unenable)
-            manButton.setBackgroundResource(R.drawable.button_background_info)
+            nextButton.setBackgroundResource(R.drawable.background_button_primary)
+            womanButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            manButton.setBackgroundResource(R.drawable.background_button_info)
             gender = "Mujer"
         }
 

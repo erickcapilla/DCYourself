@@ -17,14 +17,14 @@
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/logo_secundario" />
+    app:srcCompat="@drawable/img_logo_secondary" />
 
   <View
     android:id="@+id/my_label"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_margin="20dp"
-    android:background="@drawable/form_background_second"
+    android:background="@drawable/background_form_second"
     android:padding="10dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
     android:layout_height="55dp"
     android:layout_marginHorizontal="60dp"
     android:layout_marginBottom="30dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Finalizar"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -89,14 +89,14 @@
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/logo_secundario" />
+      app:srcCompat="@drawable/img_logo_secondary" />
 
     <View
       android:id="@+id/back"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:layout_margin="20dp"
-      android:background="@drawable/form_background_second"
+      android:background="@drawable/background_form_second"
       android:padding="10dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
       android:layout_height="55dp"
       android:layout_marginHorizontal="60dp"
       android:layout_marginBottom="30dp"
-      android:background="@drawable/button_background_primary"
+      android:background="@drawable/background_button_primary"
       android:fontFamily="@font/droid_sans_bold"
       android:text="Finalizar"
       android:textAppearance="@style/TextAppearance.AppCompat.Large"

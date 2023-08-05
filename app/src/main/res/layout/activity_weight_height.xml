@@ -12,7 +12,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginTop="330dp"
-    android:background="@drawable/form_background"
+    android:background="@drawable/background_form"
     android:padding="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.3"
-    app:srcCompat="@drawable/logo"
+    app:srcCompat="@drawable/img_logo"
     android:contentDescription="Logo de la app"/>
 
   <TextView
@@ -58,7 +58,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView6"
@@ -70,7 +70,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView7"
@@ -82,7 +82,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_active" />
+    app:srcCompat="@drawable/img_indicator_active" />
 
   <ImageView
     android:id="@+id/imageView8"
@@ -94,7 +94,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <ImageView
     android:id="@+id/imageView9"
@@ -106,14 +106,14 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive" />
 
   <EditText
     android:id="@+id/editWeight"
     android:layout_width="0dp"
     android:layout_height="56dp"
     android:layout_marginHorizontal="30dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Peso"
@@ -132,7 +132,7 @@
     android:layout_width="0dp"
     android:layout_height="56dp"
     android:layout_marginHorizontal="30dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
     android:hint="Estatura"
@@ -156,7 +156,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.65"
-    app:srcCompat="@drawable/peso"
+    app:srcCompat="@drawable/img_weight"
     tools:ignore="MissingConstraints" />
 
   <ImageView
@@ -169,7 +169,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.69"
-    app:srcCompat="@drawable/altura1"
+    app:srcCompat="@drawable/img_height"
     tools:ignore="MissingConstraints" />
 
   <Button
@@ -177,7 +177,7 @@
     android:layout_width="112dp"
     android:layout_height="56dp"
     android:layout_marginBottom="40dp"
-    android:background="@drawable/button_background_secondary"
+    android:background="@drawable/background_button_secondary"
     android:backgroundTint="@color/white"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Atrás"
@@ -194,7 +194,7 @@
     android:layout_width="112dp"
     android:layout_height="56dp"
     android:layout_marginBottom="40dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Siguiente"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"

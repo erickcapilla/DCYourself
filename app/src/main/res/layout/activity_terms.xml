@@ -16,7 +16,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/logo_secundario" />
+    app:srcCompat="@drawable/img_logo_secondary" />
 
   <ScrollView
     android:layout_width="match_parent"
@@ -267,7 +267,7 @@
     android:layout_width="256dp"
     android:layout_height="56dp"
     android:layout_marginBottom="30dp"
-    android:background="@drawable/button_background_primary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="Regresar"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
