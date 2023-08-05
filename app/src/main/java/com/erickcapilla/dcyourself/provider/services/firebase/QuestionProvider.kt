@@ -15,12 +15,12 @@ class QuestionProvider {
             DataQuestions("¿Tiene visión borrosa?"),
             DataQuestions("¿Tiene dolor de cabeza?"),
             DataQuestions("¿Su frecuencia cardiaca es rápida?"),
-            DataQuestions("¿Tiene perdida de peso sin causa aparente?"),
+            /*DataQuestions("¿Tiene perdida de peso sin causa aparente?"),
             DataQuestions("¿Tiene llagas que no cicatrizan?"),
             DataQuestions("¿Tiene sensación de cansancio?"),
             DataQuestions("¿Tiene exceso de sueño (somnolencia)?"),
             DataQuestions("¿Tiene visión borrosa?"),
-            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")
+            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")*/
         )
 
         val questionsListH = listOf(
@@ -34,11 +34,11 @@ class QuestionProvider {
             DataQuestions("¿Tiene dolor de cabeza?"),
             DataQuestions("¿Su frecuencia cardiaca es rápida?"),
             DataQuestions("¿Tiene perdida de peso sin causa aparente?"),
-            DataQuestions("¿Tiene llagas que no cicatrizan?"),
+            /*DataQuestions("¿Tiene llagas que no cicatrizan?"),
             DataQuestions("¿Tiene sensación de cansancio?"),
             DataQuestions("¿Tiene exceso de sueño (somnolencia)?"),
             DataQuestions("¿Tiene visión borrosa?"),
-            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")
+            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")*/
         )
 
         val questionsListN = listOf(
@@ -52,12 +52,12 @@ class QuestionProvider {
             DataQuestions("¿Tiene dolor de cabeza?"),
             DataQuestions("¿Su frecuencia cardiaca es rápida?"),
             DataQuestions("¿Tiene aumento de peso sin causa aparente?"),
-            DataQuestions("¿Tiene perdida de peso sin causa aparente?"),
+            /*DataQuestions("¿Tiene perdida de peso sin causa aparente?"),
             DataQuestions("¿Tiene llagas que no cicatrizan?"),
             DataQuestions("¿Tiene sensación de cansancio?"),
             DataQuestions("¿Tiene exceso de sueño (somnolencia)?"),
             DataQuestions("¿Tiene visión borrosa?"),
-            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")
+            DataQuestions("¿Tiene entumecimiento u hormigueo en pies y manos?")*/
         )
     }
 }

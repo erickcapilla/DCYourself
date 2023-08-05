@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.erickcapilla.dcyourself.util.UIUtils
 
@@ -21,11 +23,27 @@ class SignUp : AppCompatActivity() {
         val editName = findViewById<EditText>(R.id.editName)
         val editLastName = findViewById<EditText>(R.id.editLastName)
         val editLastName2 = findViewById<EditText>(R.id.editLastName2)
-
+        val error = findViewById<TextView>(R.id.error)
         val next = findViewById<Button>(R.id.next)
+
+        editName.setOnClickListener {
+            error.visibility = View.GONE
+        }
+
+        editLastName.setOnClickListener {
+            error.visibility = View.GONE
+        }
+
+        editLastName2.setOnClickListener {
+            error.visibility = View.GONE
+        }
 
         next.setOnClickListener {
             if(!uiModel.isEditEmpty(listOf(editName, editLastName, editLastName2))) {
+                if(uiModel.isNotMin(listOf(editName, editLastName, editLastName2))) {
+                    error.visibility = View.VISIBLE
+                    return@setOnClickListener
+                }
                 val change = Intent(this, SignUp2::class.java)
                 change.putExtra("name", editName.text.toString().trim())
                 change.putExtra("lastName", editLastName.text.toString().trim())

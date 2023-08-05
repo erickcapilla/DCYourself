@@ -29,6 +29,7 @@ class Login : AppCompatActivity() {
         val progressTitle = findViewById<TextView>(R.id.progressTitle)
         val editEmail = findViewById<EditText>(R.id.editEmail)
         val editPassword = findViewById<EditText>(R.id.editPassword)
+        val errorEmail = findViewById<TextView>(R.id.errorEmail)
 
         val eyeButton = findViewById<ImageButton>(R.id.eyeButton)
         var visibility = false
@@ -61,11 +62,10 @@ class Login : AppCompatActivity() {
             }
 
             if(!uiModel.isEmailValid(email)) {
-                uiModel.showToast(applicationContext, "Email no valido")
+                errorEmail.visibility = View.VISIBLE
                 return@setOnClickListener
             }
 
-            //progressDialog.show()
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             login.isEnabled = false
@@ -73,18 +73,16 @@ class Login : AppCompatActivity() {
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
                 if(it.isSuccessful) {
-                    //progressDialog.dismiss()
                     progressBar.visibility = View.GONE
                     progressTitle.visibility = View.GONE
                     val change = Intent(this, Home::class.java)
                     startActivity(change)
                 } else {
-                    //progressDialog.dismiss()
                     login.isEnabled = true
                     progressBar.visibility = View.GONE
                     progressTitle.visibility = View.GONE
                     login.setBackgroundResource(R.drawable.button_background_primary)
-                    uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
+                    uiModel.showToast(applicationContext, "El usuario no existe. Revisa tu conexión")
                 }
             }
         }

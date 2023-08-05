@@ -67,44 +67,30 @@ class AddMedicines : AppCompatActivity() {
             }
 
             val docRefUser = db.collection("med").document(email)
+            val medicinesData = docRefUser.collection("meds")
 
-            docRefUser.get().addOnSuccessListener { document ->
-                /*if(doc != null) {
-                    /*val name = doc.data?.get("name") as Map<*>
-                    val total = doc.data?.get("total") as Map<*,*>
-                    val dose = doc.data?.get("dose") as Map<*,*>
-                    val frequency = doc.data?.get("frequency") as Map<*,*>
-                    val dateOne = doc.data?.get("dateOne") as Map<*,*>
-                    val dateTwo = doc.data?.get("dateTwo") as Map<*,*>*/
-                    val nameArray = doc.toObject(ArrayList::class.java)
-                    for (doc in querySnapshot) {
-                        val name = ArrayList<String>()
-                        name.addAll(nameArray as ArrayList<String>)
-                    }
+            name = editName.text.toString()
+            total = editTotal.text.toString()
+            dose = editDose.text.toString()
+            frequency = editFrequency.selectedItem.toString()
+            dateOne = editStart.text.toString()
+            dateTwo = editEnd.text.toString()
 
-                    /*name.toList().toMutableList().add(editName.text.toString())
-                    total.toList().toMutableList().add(editTotal.text.toString())
-                    dose.toList().toMutableList().add(editDose.text.toString())
-                    frequency.toList().toMutableList().add(editFrequency.selectedItem.toString())
-                    dateOne.toList().toMutableList().add(editStart.text.toString())
-                    dateTwo.toList().toMutableList().add(editEnd.text.toString())
+            val medData = hashMapOf(
+                "name" to name,
+                "total" to total,
+                "dose" to dose,
+                "frequency" to frequency,
+                "dateOne" to dateOne,
+                "dateTwo" to dateTwo
+            )
 
-                    docRefUser.set().addOnSuccessListener {
-
-                    }*/
-                }*/
-                db.collection("med").document(email)
-                    .update("name", editName.text.toString())
-                db.collection("med").document(email)
-                    .update("total", editTotal.text.toString())
-                db.collection("med").document(email)
-                    .update("dose", editDose.text.toString())
-                db.collection("med").document(email)
-                    .update("frequency", editFrequency.selectedItem.toString())
-                db.collection("med").document(email)
-                    .update("dateOne", editStart.text.toString())
-                db.collection("med").document(email)
-                    .update("dateTwo", editEnd.text.toString())
+            medicinesData.add(medData).addOnSuccessListener { doc ->
+                uiModels.showToast(applicationContext, "Medicamento agregado")
+                val change = Intent(this, Medicines::class.java)
+                change.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                overridePendingTransition(0,0)
+                startActivity(change)
             }
 
         }

@@ -81,6 +81,7 @@
     android:inputType="text|textPersonName|textCapWords"
     android:paddingStart="10dp"
     android:textSize="16sp"
+    android:maxLength="50"
     app:layout_constraintBottom_toTopOf="@+id/editLastName"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -99,6 +100,7 @@
     android:inputType="text|textPersonName|textCapWords"
     android:paddingStart="10dp"
     android:textSize="16sp"
+    android:maxLength="30"
     app:layout_constraintTop_toBottomOf="@+id/editName"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -117,6 +119,7 @@
     android:inputType="text|textPersonName|textCapWords"
     android:paddingStart="10dp"
     android:textSize="16sp"
+    android:maxLength="30"
     app:layout_constraintBottom_toTopOf="@+id/go_back"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -124,6 +127,22 @@
     app:layout_constraintTop_toBottomOf="@+id/editLastName"
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry"/>
+
+  <TextView
+    android:id="@+id/error"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/editLastName2"
+    app:layout_constraintBottom_toTopOf="@+id/go_back"
+    android:textAlignment="center"
+    android:textColor="#FFF"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="10sp"
+    android:text="Debes ingresar minimo 3 caracteres"
+    android:visibility="gone"
+    />
 
   <Button
     android:id="@+id/go_back"

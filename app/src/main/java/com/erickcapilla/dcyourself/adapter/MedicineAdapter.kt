@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erickcapilla.dcyourself.model.DataMedicines
 import com.erickcapilla.dcyourself.R
 
-class MedicineAdapter(private val medicineList: List<DataMedicines>, private val onClickListener: (Int, DataMedicines) -> Unit):RecyclerView.Adapter<MedicineViewHolder>() {
+class MedicineAdapter(private val medicineList: List<DataMedicines>, private val onClickListener: (String, DataMedicines) -> Unit):RecyclerView.Adapter<MedicineViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicineViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

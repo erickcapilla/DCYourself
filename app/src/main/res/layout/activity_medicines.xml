@@ -59,6 +59,23 @@
     app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
     app:layout_constraintTop_toTopOf="@+id/background"/>
 
+  <TextView
+    android:id="@+id/addMeds"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="30dp"
+    android:text="Agrega medicamentos"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="22sp"
+    android:fontFamily="@font/droid_sans_bold"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="@+id/background"
+    app:layout_constraintTop_toTopOf="@+id/background"
+    android:visibility="gone"
+    />
+
   <Button
     android:id="@+id/buttonAdd"
     android:layout_width="0dp"

@@ -29,17 +29,18 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.541"
-    app:srcCompat="@drawable/feliz" />
+    app:srcCompat="@drawable/baseline_assignment_24" />
 
   <TextView
     android:id="@+id/textView11"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="@font/open_sans_bold"
-    android:text="¡No tienes diabetes!"
+    android:text="¡Riesgo bajo de tener diabetes!"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="#155959"
     android:textSize="24sp"
+    android:textAlignment="center"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.496"
@@ -52,7 +53,7 @@
     android:layout_width="362dp"
     android:layout_height="34dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Sigue utilizando la aplicación, la sección de RECOMENDACIONES te ayudará más de lo que crees."
+    android:text="Sigue utilizando la aplicación, la sección de RECOMENDACIONES te ayudará más de lo que crees. Acude a tu medico"
     android:textAlignment="center"
     android:textColor="#155959"
     android:textSize="12sp"

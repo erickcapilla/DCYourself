@@ -68,6 +68,23 @@
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry" />
 
+  <TextView
+    android:id="@+id/errorEmail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:layout_constraintStart_toStartOf="@+id/editEmail"
+    app:layout_constraintTop_toBottomOf="@+id/editEmail"
+    android:textAlignment="center"
+    android:textColor="#FFF"
+    android:visibility="gone"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="10sp"
+    android:text="Formato de correo aceptado: ejemplo123@mail.com"
+    />
+
+
   <EditText
     android:id="@+id/editPassword"
     android:layout_width="314dp"

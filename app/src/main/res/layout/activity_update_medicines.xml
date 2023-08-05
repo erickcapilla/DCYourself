@@ -61,7 +61,8 @@
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@id/background"
     app:layout_constraintTop_toTopOf="@id/background"
-    android:inputType="text"
+    android:inputType="textCapWords"
+    android:maxLength="25"
     />
 
   <EditText
@@ -79,11 +80,11 @@
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toStartOf="@id/editFrequency"
     app:layout_constraintTop_toBottomOf="@id/editName"
-    app:layout_constraintBottom_toTopOf="@+id/editTime"
-    android:inputType="text"
+    app:layout_constraintBottom_toTopOf="@+id/editDays"
+    android:inputType="number"
     />
 
-  <EditText
+  <Spinner
     android:id="@+id/editFrequency"
     android:layout_width="0dp"
     android:layout_height="55dp"
@@ -98,25 +99,49 @@
     app:layout_constraintStart_toEndOf="@+id/editDose"
     app:layout_constraintEnd_toEndOf="@id/background"
     app:layout_constraintTop_toBottomOf="@id/editName"
-    app:layout_constraintBottom_toTopOf="@+id/editTime"
-    android:inputType="text"
+    app:layout_constraintBottom_toTopOf="@+id/editDays"
+    android:inputType="number"
     />
 
   <EditText
-    android:id="@+id/editTime"
+    android:id="@+id/editDays"
     android:layout_width="0dp"
     android:layout_height="55dp"
-    android:layout_marginHorizontal="40dp"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="10dp"
     android:background="@drawable/button_background_secondary"
-    android:hint="Tiempo a consumir"
+    android:hint="Días"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
     android:fontFamily="@font/droid_sans"
     app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toStartOf="@id/editEnd"
+    app:layout_constraintTop_toBottomOf="@id/editDose"
+    app:layout_constraintBottom_toTopOf="@+id/editTotal"
+    android:clickable="false"
+    android:focusable="false"
+    android:inputType="number"
+    />
+
+  <EditText
+    android:id="@+id/editEnd"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/button_background_secondary"
+    android:hint="Fecha de fin"
+    android:paddingStart="10dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:fontFamily="@font/droid_sans"
+    app:layout_constraintStart_toEndOf="@+id/editDays"
     app:layout_constraintEnd_toEndOf="@id/background"
     app:layout_constraintTop_toBottomOf="@id/editDose"
     app:layout_constraintBottom_toTopOf="@+id/editTotal"
+    android:clickable="false"
+    android:focusable="false"
     android:inputType="text"
     />
 
@@ -130,12 +155,13 @@
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
+    android:maxLength="3"
     android:fontFamily="@font/droid_sans"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@id/background"
-    app:layout_constraintTop_toBottomOf="@id/editTime"
+    app:layout_constraintTop_toBottomOf="@id/editEnd"
     app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
-    android:inputType="text"
+    android:inputType="number"
     />
 
   <Button

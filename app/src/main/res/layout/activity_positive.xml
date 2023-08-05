@@ -29,17 +29,19 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.541"
-    app:srcCompat="@drawable/triste" />
+    app:srcCompat="@drawable/baseline_assignment_24" />
 
   <TextView
     android:id="@+id/textView11"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="30dp"
     android:fontFamily="@font/open_sans_bold"
-    android:text="¡Tienes diabetes!"
+    android:text="¡Riesgo alto de tener diabetes!"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="#155959"
     android:textSize="24sp"
+    android:textAlignment="center"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.496"
@@ -49,13 +51,14 @@
 
   <TextView
     android:id="@+id/textView14"
-    android:layout_width="351dp"
-    android:layout_height="50dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="30dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="A continuación contestarás un cuestionario para saber el tipo de diabetes que tienes. Es importante que acudas a tu médico."
+    android:text="A continuación contestarás un cuestionario. Es importante que acudas a tu médico lo antes posible."
     android:textAlignment="center"
     android:textColor="#155959"
-    android:textSize="12sp"
+    android:textSize="14sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.516"

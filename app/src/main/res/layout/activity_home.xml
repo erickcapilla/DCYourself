@@ -77,7 +77,7 @@
     android:layout_marginVertical="10dp"
     android:padding="20dp"
     android:background="@drawable/background_white"
-    android:src="@drawable/baseline_notifications_24"
+    android:src="@drawable/baseline_med_24"
     app:layout_constraintStart_toStartOf="@+id/textMain"
     app:layout_constraintTop_toTopOf="@+id/textMain"
     app:layout_constraintBottom_toBottomOf="@+id/textMain"
@@ -96,7 +96,7 @@
     android:textColor="@color/white"
     android:textAlignment="center"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Titulo" />
+    android:text="Medicamentos" />
 
   <TextView
     android:id="@+id/textMainBody"
@@ -111,7 +111,7 @@
     android:textSize="16sp"
     android:textColor="@color/white"
     android:fontFamily="@font/droid_sans"
-    android:text="Texto para este aviso" />
+    android:text="Lleva un control de tus medicamentos. Accede a la sección de Medicamentos." />
 
   <!-- Second Box-->
 
@@ -135,7 +135,7 @@
     android:layout_marginHorizontal="10dp"
     android:padding="10dp"
     android:background="@drawable/background_white"
-    android:src="@drawable/baseline_notifications_24"
+    android:src="@drawable/baseline_recommend"
     app:layout_constraintStart_toStartOf="@+id/textSecond"
     app:layout_constraintTop_toTopOf="@+id/textSecond"
     app:layout_constraintBottom_toTopOf="@+id/textSecondTitle"
@@ -156,13 +156,14 @@
     android:textColor="@color/white"
     android:textAlignment="center"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Titulo" />
+    android:text="Recomendaciones" />
 
   <TextView
     android:id="@+id/textSecondBody"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     app:layout_constraintStart_toStartOf="@+id/textSecond"
     app:layout_constraintEnd_toEndOf="@+id/textSecond"
@@ -171,7 +172,7 @@
     android:textSize="12sp"
     android:textColor="@color/white"
     android:fontFamily="@font/droid_sans"
-    android:text="Texto para este aviso" />
+    android:text="Checa las recomendaciones que tenemos para ti." />
 
   <!-- Third Box-->
 
@@ -195,7 +196,7 @@
     android:padding="10dp"
     android:layout_marginHorizontal="10dp"
     android:background="@drawable/background_white"
-    android:src="@drawable/baseline_notifications_24"
+    android:src="@drawable/baseline_person_24"
     app:layout_constraintStart_toStartOf="@+id/textThird"
     app:layout_constraintTop_toTopOf="@+id/textThird"
     app:layout_constraintBottom_toTopOf="@+id/textThirdTitle"
@@ -216,13 +217,14 @@
     android:textColor="@color/white"
     android:textAlignment="center"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Titulo" />
+    android:text="Editar perfil" />
 
   <TextView
     android:id="@+id/textThirdBody"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     app:layout_constraintStart_toStartOf="@+id/textThird"
     app:layout_constraintEnd_toEndOf="@+id/textThird"
@@ -231,7 +233,7 @@
     android:textSize="12sp"
     android:textColor="@color/white"
     android:fontFamily="@font/droid_sans"
-    android:text="Texto para este aviso" />
+    android:text="Manten tu perfil actualizado." />
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"

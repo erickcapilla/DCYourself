@@ -32,6 +32,8 @@ class ChangePassword : AppCompatActivity() {
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         val progressTitle = findViewById<TextView>(R.id.progressTitle)
         val textForgot = findViewById<TextView>(R.id.forgotPassword)
+        val errorPassword = findViewById<TextView>(R.id.errorPassword)
+        val errorConfirmPassword = findViewById<TextView>(R.id.errorConfirmPassword)
         val goBack = findViewById<Button>(R.id.go_back)
 
         val uiModel = UIUtils()
@@ -40,6 +42,16 @@ class ChangePassword : AppCompatActivity() {
         upDateButton.setOnClickListener {
             if(uiModel.isEditEmpty(listOf(editPassword, editNewPassword, editConfirmPassword))) {
                 uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
+                return@setOnClickListener
+            }
+
+            if(!uiModel.isPasswordValid(editNewPassword.text.toString())) {
+                errorPassword.visibility = View.VISIBLE
+                return@setOnClickListener
+            }
+
+            if(editNewPassword.text.toString() != editConfirmPassword.text.toString()) {
+                errorConfirmPassword.visibility = View.VISIBLE
                 return@setOnClickListener
             }
 
@@ -72,7 +84,7 @@ class ChangePassword : AppCompatActivity() {
                                 }
                             }
                     } else {
-                        uiModel.showToast(applicationContext, "Se ha producido un error, Vuelve a intentarlo")
+                        uiModel.showToast(applicationContext, "Contraseña incorrecta. Vuelve a intentarlo.")
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         upDateButton.isEnabled = true

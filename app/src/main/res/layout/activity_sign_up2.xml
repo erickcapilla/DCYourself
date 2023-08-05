@@ -90,6 +90,22 @@
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry" />
 
+  <TextView
+    android:id="@+id/errorEmail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:layout_constraintStart_toStartOf="@+id/editEmail"
+    app:layout_constraintTop_toBottomOf="@+id/editEmail"
+    android:textAlignment="center"
+    android:textColor="#FFF"
+    android:visibility="gone"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="10sp"
+    android:text="Formato de correo aceptado: ejemplo123@mail.com"
+    />
+
   <EditText
     android:id="@+id/editPassword"
     android:layout_width="314dp"
@@ -108,6 +124,21 @@
     app:layout_constraintTop_toBottomOf="@+id/editEmail"
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry" />
+
+  <TextView
+    android:id="@+id/errorPassword"
+    android:layout_width="314dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:layout_constraintStart_toStartOf="@+id/editPassword"
+    app:layout_constraintTop_toBottomOf="@+id/editPassword"
+    android:textColor="#FFF"
+    android:visibility="gone"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="10sp"
+    android:text="Mínimo de 8 caracteres. Un número, una mayuscula y un caracter especial"
+    />
 
   <ImageButton
     android:id="@+id/eyeButton"
@@ -140,6 +171,21 @@
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="RtlSymmetry" />
 
+  <TextView
+    android:id="@+id/errorConfirmPassword"
+    android:layout_width="314dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:layout_constraintStart_toStartOf="@+id/editConfirmPassword"
+    app:layout_constraintTop_toBottomOf="@+id/editConfirmPassword"
+    android:textColor="#FFF"
+    android:fontFamily="@font/droid_sans_bold"
+    android:textSize="10sp"
+    android:visibility="gone"
+    android:text="La contraseña debe coincidir"
+    />
+
   <ImageButton
     android:id="@+id/eyeButton2"
     android:layout_width="wrap_content"
@@ -161,15 +207,27 @@
     android:drawableTint="#FFFFFF"
     android:fontFamily="@font/droid_sans_bold"
     android:foregroundTint="#FFFFFF"
+    android:textSize="12sp"
     android:text="Acepto términos y condiciones"
     android:textColor="#FFFFFF"
     app:layout_constraintBottom_toTopOf="@+id/go_back"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.3"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintHorizontal_bias="0"
+    app:layout_constraintStart_toStartOf="@+id/editConfirmPassword"
     app:layout_constraintTop_toBottomOf="@+id/editConfirmPassword"
     app:layout_constraintVertical_bias="0.5" />
 
+  <ImageButton
+    android:id="@+id/eyeButton3"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:paddingHorizontal="10dp"
+    android:layout_marginEnd="1dp"
+    android:src="@drawable/baseline_eye_white_24"
+    android:background="#00000000"
+    app:layout_constraintEnd_toEndOf="@+id/editConfirmPassword"
+    app:layout_constraintTop_toTopOf="@+id/accept"
+    app:layout_constraintBottom_toBottomOf="@+id/accept"/>
 
   <Button
     android:id="@+id/go_back"

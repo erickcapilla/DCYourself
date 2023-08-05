@@ -43,12 +43,27 @@ class SignUp2 : AppCompatActivity() {
         val accept = findViewById<CheckBox>(R.id.accept)
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         val progressTitle = findViewById<TextView>(R.id.progressTitle)
+        val errorEmail = findViewById<TextView>(R.id.errorEmail)
+        val errorPassword = findViewById<TextView>(R.id.errorPassword)
+        val errorConfirmPassword = findViewById<TextView>(R.id.errorConfirmPassword)
         val goBack = findViewById<Button>(R.id.go_back)
 
         val uiModel = UIUtils()
 
         val eyeButton = findViewById<ImageButton>(R.id.eyeButton)
         var visibility = false
+
+        editEmail.setOnClickListener {
+            errorEmail.visibility = View.GONE
+        }
+
+        editPassword.setOnClickListener {
+            errorPassword.visibility = View.GONE
+        }
+
+        editConfirmPassword.setOnClickListener {
+            errorConfirmPassword.visibility = View.GONE
+        }
 
         eyeButton.setOnClickListener {
             if(visibility) {
@@ -77,6 +92,12 @@ class SignUp2 : AppCompatActivity() {
             }
         }
 
+        val eyeButton3 = findViewById<ImageButton>(R.id.eyeButton3)
+        eyeButton3.setOnClickListener {
+            val change = Intent(this, Terms::class.java)
+            startActivity(change)
+        }
+
         val signUp = findViewById<Button>(R.id.signUp)
         signUp.setOnClickListener {
             val email: String
@@ -93,12 +114,17 @@ class SignUp2 : AppCompatActivity() {
             }
 
             if(!uiModel.isEmailValid(email)) {
-                uiModel.showToast(applicationContext, "Email no valido")
+                errorEmail.visibility = View.VISIBLE
+                return@setOnClickListener
+            }
+
+            if(!uiModel.isPasswordValid(password)) {
+                errorPassword.visibility = View.VISIBLE
                 return@setOnClickListener
             }
 
             if(password != confirmPassword) {
-                uiModel.showToast(applicationContext, "Las contraseñas deben coincidir")
+                errorConfirmPassword.visibility = View.VISIBLE
                 return@setOnClickListener
             }
 
@@ -137,28 +163,13 @@ class SignUp2 : AppCompatActivity() {
                                     "family" to "",
                                     "exercise" to ""
                                 ))
-                            db.collection("med").document(email)
-                                .set(hashMapOf(
-                                    "name" to "",
-                                    "total" to "",
-                                    "dose" to "",
-                                    "frequency" to "",
-                                    "dateOne" to "",
-                                    "dateTwo" to ""
-                                ))
-                            db.collection("data").document(email)
-                                .set(hashMapOf(
-                                    "glucose" to "",
-                                    "hemoglobin" to "",
-                                    "insulin" to ""
-                                ))
                             db.collection("diagnosis").document(email)
                                 .set(hashMapOf(
                                     "diabetic" to "",
                                     "type" to ""
                                 ))
                         }
-                    Firebase.auth.signOut()
+
                     editEmail.setText("")
                     editPassword.setText("")
                     editConfirmPassword.setText("")
@@ -166,7 +177,7 @@ class SignUp2 : AppCompatActivity() {
                     progressTitle.visibility = View.GONE
                     accept.isChecked = false
                     uiModel.showToast(applicationContext, "Usuario registrado")
-                    val change = Intent(this, Login::class.java)
+                    val change = Intent(this, Home::class.java)
                     startActivity(change)
                 } else {
                     signUp.isEnabled = true
@@ -175,45 +186,9 @@ class SignUp2 : AppCompatActivity() {
                     signUp.setBackgroundResource(R.drawable.button_background_primary)
                     goBack.isEnabled = true
                     goBack.setBackgroundResource(R.drawable.button_background_secondary)
-                    uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
+                    uiModel.showToast(applicationContext, "Ya hay un usuario con este correo. Revisa tu conexión")
                 }
             }
-
-            /*
-                    /*val status = fBAuth.signUpUser(
-                        name.toString(), lastName.toString(), lastName2.toString(), email, password
-                    )*/
-                    if(!uiModel.isEmailValid(email)) {
-                        uiModel.showToast(applicationContext, "Email no valido")
-                        return@setOnClickListener
-                    }
-                    auth.createUserWithEmailAndPassword(editEmail.text.toString(),
-                        editPassword.text.toString()).addOnCompleteListener(this) { task ->
-                            if(task.isSuccessful) {
-                                val user = Firebase.auth.currentUser!!
-                                val credential = EmailAuthProvider
-                                    .getCredential(email, password)
-                                user.reauthenticate(credential)
-                                    .addOnCompleteListener {
-                                        db.collection("user").document(email)
-                                            .set(hashMapOf(
-                                                "name" to name,
-                                                "lastName" to lastName,
-                                                "lastName2" to lastName2
-                                            ))
-                                    }
-                                Firebase.auth.signOut()
-                                uiModel.showToast(applicationContext, "Usuario registrado")
-                            } else {
-                                uiModel.showToast(applicationContext, "Se ha producido un error. Vuelve a intentarlo")
-                            }
-                        }
-                    /*if(status) {
-                        uiModel.showToast(applicationContext, "Usuario registrado")
-                    } else {
-                        uiModel.showToast(applicationContext, "Se ha producido un error, Vuelve a intentarlo")
-                    }*/
-                 */
         }
 
         goBack.setOnClickListener { finish() }
