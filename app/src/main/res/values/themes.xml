@@ -1,20 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
-  <style name="Theme.Default" parent="Theme.AppCompat.Light.NoActionBar">
-    <!-- Primary brand color. -->
-    <item name="colorPrimary">@color/purple_500</item>
-    <item name="colorPrimaryVariant">@color/purple_700</item>
-    <item name="colorOnPrimary">@color/white</item>
-    <!-- Secondary brand color. -->
-    <item name="colorSecondary">@color/teal_200</item>
-    <item name="colorSecondaryVariant">@color/teal_700</item>
-    <item name="colorOnSecondary">@color/black</item>
-    <!-- Status bar color. -->
-    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-    <!-- Customize your theme here. -->
-  </style>
-
   <style name="Theme.DCYourself" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:colorBackground">@color/background_light</item>
     <!-- Primary brand color. -->
     <item name="colorPrimary">@color/green_500</item>
     <item name="colorPrimaryVariant">@color/green_200</item>
@@ -27,18 +14,74 @@
     <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
   </style>
 
-  <style name="PrincipalLogo" parent="Theme.AppCompat">
-    <item name="srcCompat">@drawable/img_logo_secondary</item>
+  <!-- Background Color -->
+
+  <style name="BackgroundColor" parent="Theme.DCYourself">
+    <item name="background">@color/background_light</item>
   </style>
 
-  <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
-    <item name="android:colorAccent">@color/green_500</item>
+  <!-- Buttons -->
+
+  <style name="ButtonPrimary" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_button_primary</item>
+    <item name="fontFamily">@font/droid_sans_bold</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+    <item name="android:textColor">?attr/colorOnPrimary</item>
+    <item name="android:textSize">20sp</item>
   </style>
+
+  <style name="ButtonSecondary" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_button_secondary</item>
+    <item name="fontFamily">@font/droid_sans_bold</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+    <item name="android:textColor">?attr/colorSecondary</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
+  <!-- Logos -->
+
+  <style name="PrincipalLogo" parent="Theme.AppCompat">
+    <item name="srcCompat">@drawable/img_logo_principal</item>
+    <item name="android:layout_width">200dp</item>
+    <item name="android:layout_height">185dp</item>
+    <item name="android:contentDescription">Logo de DCYourself</item>
+  </style>
+
+  <style name="SecondaryLogo" parent="Theme.AppCompat">
+    <item name="srcCompat">@drawable/img_logo_secondary</item>
+    <item name="android:layout_width">333dp</item>
+    <item name="android:layout_height">96dp</item>
+    <item name="android:contentDescription">Logo de DCYourself</item>
+  </style>
+
+  <style name="SecondaryLogoVariant" parent="Theme.AppCompat">
+    <item name="srcCompat">@drawable/img_logo_secondary</item>
+    <item name="android:layout_width">175dp</item>
+    <item name="android:layout_height">50dp</item>
+    <item name="android:layout_marginTop">16dp</item>
+    <item name="android:contentDescription">Logo de DCYourself</item>
+  </style>
+
+  <style name="Logo" parent="Theme.AppCompat">
+    <item name="srcCompat">@drawable/img_logo</item>
+    <item name="android:layout_width">100dp</item>
+    <item name="android:layout_height">120dp</item>
+    <item name="android:contentDescription">Logo de DCYourself</item>
+  </style>
+
+  <!-- SplashScreen -->
 
   <style name="SplashTheme" parent="Theme.DCYourself">
     <item name="android:windowBackground">@drawable/splash</item>
   </style>
 
+  <!-- Picker Themes -->
+
+  <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
+    <item name="android:colorAccent">?attr/colorPrimary</item>
+  </style>
+
+  <!-- Animations -->
   <style name="SliderActivityAnimation" parent="@android:style/Animation.Activity">
     <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
     <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>

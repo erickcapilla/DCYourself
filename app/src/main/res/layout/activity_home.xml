@@ -4,7 +4,6 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="#7378DFDF"
   tools:context=".Home">
 
   <ImageButton
@@ -31,14 +30,10 @@
 
   <ImageView
     android:id="@+id/imageView17"
-    android:layout_width="175dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="16dp"
-    android:background="#00FFFFFF"
+    style="@style/SecondaryLogoVariant"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/img_logo_secondary" />
+    app:layout_constraintStart_toStartOf="parent" />
 
   <TextView
     android:id="@+id/textName"
