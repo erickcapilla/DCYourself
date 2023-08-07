@@ -16,7 +16,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.133"
-    app:srcCompat="@drawable/img_logo_principal" />
+    app:srcCompat="@drawable/img_logo_principal"
+    tools:ignore="ContentDescription"/>
 
   <ImageView
     android:id="@+id/imageView13"
@@ -28,7 +29,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.541"
-    app:srcCompat="@drawable/img_finger_blood" />
+    app:srcCompat="@drawable/img_finger_blood"
+    tools:ignore="ContentDescription"/>
 
   <TextView
     android:id="@+id/textType"
@@ -36,7 +38,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="30dp"
     android:fontFamily="@font/open_sans_bold"
-    android:text="¡Diabetes [Tipo]!"
+    android:text="@string/type_diabetes"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="#155959"
     android:textSize="24sp"
@@ -53,7 +55,7 @@
     android:layout_width="362dp"
     android:layout_height="34dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Es importante que acudas a tu médico para tener un buen tratamiento"
+    android:text="@string/message_doctor"
     android:textAlignment="center"
     android:textColor="#155959"
     android:textSize="12sp"
@@ -70,7 +72,7 @@
     android:layout_height="55dp"
     android:background="@drawable/background_button_secondary"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Continuar"
+    android:text="@string/continue_"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textColor="#FFFFFF"
     android:textSize="20sp"

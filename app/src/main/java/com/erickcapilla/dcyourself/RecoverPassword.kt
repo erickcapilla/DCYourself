@@ -47,9 +47,9 @@ class RecoverPassword : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             sendEmail.isEnabled = false
-            sendEmail.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            sendEmail.setBackgroundResource(R.drawable.background_button_unenable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            goBack.setBackgroundResource(R.drawable.background_button_unenable)
 
             auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener {
@@ -59,7 +59,7 @@ class RecoverPassword : AppCompatActivity() {
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         sendEmail.isEnabled = true
-                        sendEmail.setBackgroundResource(R.drawable.background_button_primary)
+                        sendEmail.setBackgroundResource(R.style.ButtonPrimary)
                         goBack.isEnabled = true
                         goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     } else {
@@ -68,7 +68,7 @@ class RecoverPassword : AppCompatActivity() {
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         sendEmail.isEnabled = true
-                        sendEmail.setBackgroundResource(R.drawable.background_button_primary)
+                        sendEmail.setBackgroundResource(R.style.ButtonPrimary)
                         goBack.isEnabled = true
                         goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     }

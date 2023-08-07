@@ -20,7 +20,7 @@ class Gender : AppCompatActivity() {
         val nextButton = findViewById<Button>(R.id.next)
 
         nextButton.isEnabled = false
-        nextButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+        nextButton.setBackgroundResource(R.drawable.background_button_unenable)
 
         var gender = ""
 
@@ -28,8 +28,8 @@ class Gender : AppCompatActivity() {
             manButton.isEnabled = false
             womanButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.background_button_primary)
-            manButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            nextButton.setBackgroundResource(R.style.ButtonPrimary)
+            manButton.setBackgroundResource(R.drawable.background_button_unenable)
             womanButton.setBackgroundResource(R.drawable.background_button_info)
             gender = "Hombre"
         }
@@ -38,8 +38,8 @@ class Gender : AppCompatActivity() {
             womanButton.isEnabled = false
             manButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.background_button_primary)
-            womanButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            nextButton.setBackgroundResource(R.style.ButtonPrimary)
+            womanButton.setBackgroundResource(R.drawable.background_button_unenable)
             manButton.setBackgroundResource(R.drawable.background_button_info)
             gender = "Mujer"
         }

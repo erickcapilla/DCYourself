@@ -69,7 +69,7 @@ class Login : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             login.isEnabled = false
-            login.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            login.setBackgroundResource(R.drawable.background_button_unenable)
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
                 if(it.isSuccessful) {
@@ -81,7 +81,7 @@ class Login : AppCompatActivity() {
                     login.isEnabled = true
                     progressBar.visibility = View.GONE
                     progressTitle.visibility = View.GONE
-                    login.setBackgroundResource(R.drawable.background_button_primary)
+                    login.setBackgroundResource(R.style.ButtonPrimary)
                     uiModel.showToast(applicationContext, "El usuario no existe. Revisa tu conexión")
                 }
             }

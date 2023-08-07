@@ -8,10 +8,8 @@
 
   <TextView
     android:id="@+id/my_label"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
+    style="@style/BackgroundForm"
     android:layout_marginTop="330dp"
-    android:background="@drawable/background_form"
     android:padding="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -30,14 +28,14 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.3"
     app:srcCompat="@drawable/img_logo"
-    android:contentDescription="Logo de la app"/>
+    tools:ignore="ContentDescription" />
 
   <TextView
     android:id="@+id/textView4"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="@font/open_sans_bold"
-    android:text="¿Cuál es tu género?"
+    android:text="@string/gender"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textColor="#155959"
     android:textSize="24sp"
@@ -57,7 +55,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/img_indicator_active" />
+    app:srcCompat="@drawable/img_indicator_active"
+    tools:ignore="ContentDescription" />
 
   <ImageView
     android:id="@+id/imageView6"
@@ -69,7 +68,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/img_indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive"
+    tools:ignore="ContentDescription" />
 
   <ImageView
     android:id="@+id/imageView7"
@@ -81,7 +81,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/img_indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive"
+    tools:ignore="ContentDescription" />
 
   <ImageView
     android:id="@+id/imageView8"
@@ -93,7 +94,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/img_indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive"
+    tools:ignore="ContentDescription" />
 
   <ImageView
     android:id="@+id/imageView9"
@@ -105,7 +107,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.2"
-    app:srcCompat="@drawable/img_indicator_inactive" />
+    app:srcCompat="@drawable/img_indicator_inactive"
+    tools:ignore="ContentDescription" />
 
   <ImageButton
     android:id="@+id/iBWoman"
@@ -118,7 +121,8 @@
     app:layout_constraintTop_toTopOf="@+id/my_label"
     app:layout_constraintVertical_bias="0.8"
     app:layout_constraintHorizontal_bias="0.5"
-    app:srcCompat="@drawable/img_woman" />
+    app:srcCompat="@drawable/img_woman"
+    tools:ignore="ContentDescription" />
 
   <ImageButton
     android:id="@+id/iBMan"
@@ -132,17 +136,17 @@
     app:layout_constraintHorizontal_bias="0.5"
     android:background="@drawable/background_button_info"
     app:srcCompat="@drawable/img_man"
-    tools:ignore="MissingConstraints" />
+    tools:ignore="ContentDescription,MissingConstraints" />
 
   <TextView
     android:id="@+id/textView20"
     android:layout_width="85dp"
     android:layout_height="25dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Mujer"
+    android:text="@string/woman"
     android:textAlignment="center"
     android:textColor="@color/white"
-    android:textSize="20dp"
+    android:textSize="20sp"
     app:layout_constraintBottom_toTopOf="@+id/next"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.23"
@@ -155,10 +159,10 @@
     android:layout_width="85dp"
     android:layout_height="25dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Hombre"
+    android:text="@string/man"
     android:textAlignment="center"
     android:textColor="@color/white"
-    android:textSize="20dp"
+    android:textSize="20sp"
     app:layout_constraintBottom_toTopOf="@+id/next"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.77"
@@ -168,15 +172,11 @@
 
   <Button
     android:id="@+id/next"
+    style="@style/ButtonPrimary"
     android:layout_width="244dp"
     android:layout_height="53.75dp"
     android:layout_marginBottom="28dp"
-    android:background="@drawable/background_button_primary"
-    android:fontFamily="@font/droid_sans_bold"
-    android:text="Siguiente"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textColor="@color/white"
-    android:textSize="20sp"
+    android:text="@string/next"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"

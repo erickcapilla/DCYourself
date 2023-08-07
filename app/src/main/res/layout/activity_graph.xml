@@ -15,7 +15,8 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/img_logo_secondary" />
+    app:srcCompat="@drawable/img_logo_secondary"
+    tools:ignore="ContentDescription" />
 
   <ImageView
     android:id="@+id/imageState"
@@ -25,7 +26,8 @@
     android:src="@drawable/img_happy_face"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageView17"/>
+    app:layout_constraintTop_toBottomOf="@+id/imageView17"
+    tools:ignore="ContentDescription" />
 
   <TextView
     android:id="@+id/status"
@@ -33,7 +35,7 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="10dp"
     android:textColor="#155959"
-    android:text="¡Tu estado de salud es bueno!"
+    android:text="@string/good_health"
     android:fontFamily="@font/droid_sans_bold"
     android:textSize="20sp"
     android:textAlignment="center"
@@ -71,7 +73,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:text="Glucosa"
+    android:text="@string/glucose"
     android:textColor="#155959"
     android:textSize="14sp"
     android:fontFamily="@font/droid_sans_bold"
@@ -86,7 +88,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:text="Hemoglobina"
+    android:text="@string/hemoglobin"
     android:textColor="#155959"
     android:textSize="14sp"
     android:fontFamily="@font/droid_sans_bold"
@@ -101,7 +103,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:text="Insulina"
+    android:text="@string/insulin"
     android:textColor="#155959"
     android:textSize="14sp"
     android:fontFamily="@font/droid_sans_bold"
@@ -170,7 +172,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="30dp"
-    android:text="Riesgo: Bajo"
+    android:text="@string/risk"
     android:textColor="#155959"
     android:textSize="14sp"
     android:fontFamily="@font/droid_sans_bold"
@@ -184,7 +186,7 @@
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="30dp"
-    android:text="Realiza un primer Diagnóstico"
+    android:text="@string/first_diagnose"
     android:textColor="#155959"
     android:textSize="22sp"
     android:textAlignment="center"
@@ -205,7 +207,8 @@
     android:scaleType="centerInside"
     app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
     app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@drawable/img_button_plus" />
+    app:srcCompat="@drawable/img_button_plus"
+    tools:ignore="ContentDescription" />
 
   <TextView
     android:id="@+id/textButton"
@@ -213,9 +216,9 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="20dp"
     android:textAlignment="center"
-    android:text="Agregar datos"
+    android:text="@string/add_data"
     android:textColor="#155959"
-    android:textSize="10sp"
+    android:textSize="11sp"
     android:fontFamily="@font/droid_sans_bold"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
@@ -224,15 +227,11 @@
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"
+    style="@style/BackgroundBottomMenu"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     app:layout_constraintBottom_toBottomOf="parent"
-    android:background="@drawable/background_bottom"
     android:layout_marginHorizontal="20dp"
     android:layout_marginBottom="40dp"
-    android:elevation="2dp"
-    app:menu="@menu/bottom_menu"
-    app:itemIconSize="40dp"
     android:paddingVertical="10dp"
     app:itemIconTint="@drawable/item_selector"
     app:itemRippleColor="@android:color/transparent"

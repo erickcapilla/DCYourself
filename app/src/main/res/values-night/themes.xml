@@ -16,8 +16,31 @@
 
   <!-- Background Color -->
 
-  <style name="BackgroundColor" parent="Theme.DCYourself">
-    <item name="background"> @color/background_dark </item>
+  <style name="BackgroundForm" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_form_dark</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+  </style>
+
+  <style name="BackgroundFormSecond" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_form_second_dark</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+  </style>
+
+  <style name="BackgroundBottomMenu" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_bottom_dark</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:elevation">2dp</item>
+    <item name="menu">@menu/bottom_menu</item>
+    <item name="itemIconSize">40dp</item>
+  </style>
+
+  <style name="BackgroundButtonInfo" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_button_info_dark</item>
+    <item name="android:layout_width">100dp</item>
+    <item name="android:layout_height">109dp</item>
+    <item name="android:tint">?attr/colorSecondaryVariant</item>
   </style>
 
   <!-- Buttons -->
@@ -33,6 +56,16 @@
   <style name="ButtonSecondary" parent="Theme.DCYourself">
     <item name="android:background">@drawable/background_button_secondary_dark</item>
     <item name="fontFamily">@font/droid_sans_bold</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+    <item name="android:textColor">?attr/colorOnPrimary</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
+  <!-- EditText -->
+
+  <style name="BackgroundEdit" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_button_secondary_dark</item>
+    <item name="fontFamily">@font/droid_sans</item>
     <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
     <item name="android:textColor">?attr/colorOnPrimary</item>
     <item name="android:textSize">20sp</item>
@@ -68,6 +101,8 @@
     <item name="android:layout_height">120dp</item>
     <item name="android:contentDescription">Logo de DCYourself</item>
   </style>
+
+  <!-- Icons and Images -->
 
   <!-- SplashScreen -->
 

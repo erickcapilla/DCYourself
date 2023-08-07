@@ -15,7 +15,8 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/img_logo_secondary" />
+    app:srcCompat="@drawable/img_logo_secondary"
+    tools:ignore="ContentDescription" />
 
   <TextView
     android:id="@+id/textTitle"
@@ -23,7 +24,7 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="30dp"
     android:textColor="#155959"
-    android:text="Agregar medicamento"
+    android:text="@string/add_medicine"
     android:fontFamily="@font/droid_sans_bold"
     android:textSize="24sp"
     android:textAlignment="center"
@@ -52,7 +53,7 @@
     android:layout_marginHorizontal="40dp"
     android:layout_marginTop="35dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Nombre"
+    android:hint="@string/name"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:maxLength="25"
@@ -62,7 +63,7 @@
     app:layout_constraintEnd_toEndOf="@id/background"
     app:layout_constraintTop_toTopOf="@id/background"
     android:inputType="textCapWords"
-    />
+    tools:ignore="Autofill,RtlSymmetry" />
 
   <EditText
     android:id="@+id/editDose"
@@ -71,7 +72,7 @@
     android:layout_marginStart="40dp"
     android:layout_marginEnd="10dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Dosis"
+    android:hint="@string/dose"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
@@ -81,7 +82,7 @@
     app:layout_constraintTop_toBottomOf="@id/editName"
     app:layout_constraintBottom_toTopOf="@+id/editStart"
     android:inputType="number"
-    />
+    tools:ignore="Autofill,RtlSymmetry" />
 
   <Spinner
     android:id="@+id/editFrequency"
@@ -90,7 +91,7 @@
     android:layout_marginEnd="40dp"
     android:layout_marginStart="10dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Frecuencia"
+    android:hint="@string/frecuency"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
@@ -100,7 +101,7 @@
     app:layout_constraintTop_toBottomOf="@id/editName"
     app:layout_constraintBottom_toTopOf="@+id/editStart"
     android:inputType="number"
-    />
+    tools:ignore="RtlSymmetry" />
 
   <EditText
     android:id="@+id/editStart"
@@ -109,7 +110,7 @@
     android:layout_marginStart="40dp"
     android:layout_marginEnd="10dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Fecha de inicio"
+    android:hint="@string/date_start"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
@@ -121,7 +122,7 @@
     android:clickable="false"
     android:focusable="false"
     android:inputType="text"
-    />
+    tools:ignore="autofill,RtlSymmetry" />
 
   <EditText
     android:id="@+id/editEnd"
@@ -130,7 +131,7 @@
     android:layout_marginEnd="40dp"
     android:layout_marginStart="10dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Fecha de fin"
+    android:hint="@string/date_end"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
@@ -142,6 +143,7 @@
     android:clickable="false"
     android:focusable="false"
     android:inputType="text"
+    tools:ignore="autofill,RtlSymmetry"
     />
 
   <EditText
@@ -150,7 +152,7 @@
     android:layout_height="55dp"
     android:layout_marginHorizontal="40dp"
     android:background="@drawable/background_button_secondary"
-    android:hint="Cantidad total"
+    android:hint="@string/total_quantity"
     android:paddingStart="10dp"
     android:textColor="@color/black"
     android:textSize="16sp"
@@ -161,38 +163,31 @@
     app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
     android:inputType="number"
     android:maxLength="3"
+    tools:ignore="autofill,RtlSymmetry"
     />
 
   <Button
     android:id="@+id/buttonAdd"
+    style="@style/ButtonPrimary"
     android:layout_width="0dp"
     android:layout_height="55dp"
     android:layout_marginVertical="20dp"
     android:layout_marginHorizontal="50dp"
-    android:text="Agregar"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textColor="@color/white"
-    android:textSize="20sp"
-    android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/background_button_primary"
+    android:text="@string/add"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toBottomOf="@+id/background"/>
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"
+    style="@style/BackgroundBottomMenu"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:background="@drawable/background_bottom"
     android:layout_marginHorizontal="20dp"
     android:layout_marginBottom="40dp"
-    android:elevation="2dp"
-    app:menu="@menu/bottom_menu"
-    app:itemIconSize="40dp"
     android:paddingVertical="10dp"
     app:itemIconTint="@drawable/item_selector"
     app:itemRippleColor="@android:color/transparent"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:labelVisibilityMode="unlabeled" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,9 +58,9 @@ class ChangePassword : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             upDateButton.isEnabled = false
-            upDateButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            upDateButton.setBackgroundResource(R.drawable.background_button_unenable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            goBack.setBackgroundResource(R.drawable.background_button_unenable)
 
             val email = user?.email
             val credential = EmailAuthProvider.getCredential(email.toString(), editPassword.text.toString())
@@ -78,7 +78,7 @@ class ChangePassword : AppCompatActivity() {
                                     progressBar.visibility = View.GONE
                                     progressTitle.visibility = View.GONE
                                     upDateButton.isEnabled = true
-                                    upDateButton.setBackgroundResource(R.drawable.background_button_primary)
+                                    upDateButton.setBackgroundResource(R.style.ButtonPrimary)
                                     goBack.isEnabled = true
                                     goBack.setBackgroundResource(R.drawable.background_button_secondary)
                                 }
@@ -88,7 +88,7 @@ class ChangePassword : AppCompatActivity() {
                         progressBar.visibility = View.GONE
                         progressTitle.visibility = View.GONE
                         upDateButton.isEnabled = true
-                        upDateButton.setBackgroundResource(R.drawable.background_button_primary)
+                        upDateButton.setBackgroundResource(R.style.ButtonPrimary)
                         goBack.isEnabled = true
                         goBack.setBackgroundResource(R.drawable.background_button_secondary)
                     }

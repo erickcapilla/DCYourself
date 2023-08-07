@@ -15,7 +15,8 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/img_logo_secondary" />
+    app:srcCompat="@drawable/img_logo_secondary"
+    tools:ignore="ContentDescription" />
 
   <TextView
     android:id="@+id/nameUser"
@@ -23,7 +24,7 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="30dp"
     android:textColor="#155959"
-    android:text="Información de la cuenta"
+    android:text="@string/information_account"
     android:fontFamily="@font/droid_sans_bold"
     android:textSize="24sp"
     android:textAlignment="center"
@@ -34,11 +35,9 @@
 
   <View
     android:id="@+id/background"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
+    style="@style/BackgroundFormSecond"
     android:layout_marginVertical="30dp"
     android:layout_marginHorizontal="20dp"
-    android:background="@drawable/background_form_second"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/goBack"
@@ -50,7 +49,7 @@
     android:layout_width="314dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="30dp"
-    android:text="Correo Actual"
+    android:text="@string/current_mail"
     android:fontFamily="@font/droid_sans_bold"
     android:textSize="24sp"
     android:textColor="@color/white"
@@ -63,12 +62,11 @@
 
   <EditText
     android:id="@+id/editEmail"
+    style="@style/ButtonSecondary"
     android:layout_width="314dp"
     android:layout_height="56dp"
-    android:background="@drawable/background_button_secondary"
     android:ems="10"
-    android:fontFamily="@font/droid_sans"
-    android:hint="Correo electrónico"
+    android:hint="@string/email"
     android:inputType="textEmailAddress"
     android:paddingStart="10dp"
     android:textSize="16sp"
@@ -77,7 +75,9 @@
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/email"
-    app:layout_constraintVertical_bias="0.2" />
+    app:layout_constraintVertical_bias="0.2"
+    android:autofillHints=""
+    tools:ignore="RtlSymmetry" />
 
   <EditText
     android:id="@+id/editEmailConfirm"
@@ -86,7 +86,7 @@
     android:background="@drawable/background_button_secondary"
     android:ems="10"
     android:fontFamily="@font/droid_sans"
-    android:hint="Confirmar correo electrónico"
+    android:hint="@string/confirm_email"
     android:inputType="textEmailAddress"
     android:paddingStart="10dp"
     android:textSize="16sp"
@@ -95,7 +95,9 @@
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/editEmail"
-    app:layout_constraintVertical_bias="0.2" />
+    app:layout_constraintVertical_bias="0.2"
+    android:autofillHints=""
+    tools:ignore="RtlSymmetry" />
 
   <Button
     android:id="@+id/changePassword"
@@ -103,7 +105,7 @@
     android:layout_height="55dp"
     android:layout_marginVertical="20dp"
     android:layout_marginHorizontal="50dp"
-    android:text="Cambiar contraseña"
+    android:text="@string/change_password"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textSize="20sp"
     android:textColor="#28A6A6"
@@ -115,16 +117,12 @@
 
   <Button
     android:id="@+id/next"
+    style="@style/ButtonPrimary"
     android:layout_width="0dp"
     android:layout_height="55dp"
     android:layout_marginVertical="30dp"
     android:layout_marginHorizontal="50dp"
-    android:text="Actualizar"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textSize="20sp"
-    android:textColor="@color/white"
-    android:fontFamily="@font/droid_sans_bold"
-    android:background="@drawable/background_button_primary"
+    android:text="@string/update"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toEndOf="@+id/background"
     app:layout_constraintBottom_toBottomOf="@+id/background"/>
@@ -135,7 +133,7 @@
     android:layout_height="55dp"
     android:layout_marginVertical="20dp"
     android:layout_marginHorizontal="50dp"
-    android:text="Atrás"
+    android:text="@string/go_back"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
     android:textColor="@color/white"
     android:textSize="20sp"

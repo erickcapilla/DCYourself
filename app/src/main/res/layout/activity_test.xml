@@ -16,7 +16,8 @@
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/img_logo_secondary" />
+    app:srcCompat="@drawable/img_logo_secondary"
+    tools:ignore="ContentDescription"/>
 
   <View
     android:id="@+id/my_label"
@@ -37,7 +38,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
     android:fontFamily="@font/droid_sans_bold"
-    android:text="Elige la opción con la que te sientas más identificado"
+    android:text="@string/choose_option"
     android:textAlignment="center"
     android:textColor="#FFFFFF"
     app:layout_constraintEnd_toEndOf="@+id/my_label"
@@ -57,15 +58,12 @@
 
   <Button
     android:id="@+id/next"
+    style="@style/ButtonPrimary"
     android:layout_width="0dp"
     android:layout_height="55dp"
     android:layout_marginHorizontal="60dp"
     android:layout_marginBottom="30dp"
-    android:background="@drawable/background_button_primary"
-    android:fontFamily="@font/droid_sans_bold"
-    android:text="Finalizar"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textColor="#FFFFFF"
+    android:text="@string/end"
     android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +86,8 @@
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/img_logo_secondary" />
+      app:srcCompat="@drawable/img_logo_secondary"
+      tools:ignore="ContentDescription"/>
 
     <View
       android:id="@+id/back"
@@ -105,15 +104,12 @@
 
     <Button
       android:id="@+id/next2"
+      style="@style/ButtonPrimary"
       android:layout_width="0dp"
       android:layout_height="55dp"
       android:layout_marginHorizontal="60dp"
       android:layout_marginBottom="30dp"
-      android:background="@drawable/background_button_primary"
-      android:fontFamily="@font/droid_sans_bold"
-      android:text="Finalizar"
-      android:textAppearance="@style/TextAppearance.AppCompat.Large"
-      android:textColor="#FFFFFF"
+      android:text="@string/end"
       android:textSize="24sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +133,7 @@
       android:id="@+id/progressTitle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Espera un momento..."
+      android:text="@string/wait_moment"
       android:textSize="16sp"
       android:textColor="#FFF"
       android:fontFamily="@font/droid_sans_bold"

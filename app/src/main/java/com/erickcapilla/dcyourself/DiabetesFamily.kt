@@ -25,9 +25,9 @@ class DiabetesFamily : AppCompatActivity() {
         val uiModel = UIUtils()
 
         nextButton.isEnabled = false
-        nextButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+        nextButton.setBackgroundResource(R.drawable.background_button_unenable)
         editNumber.isEnabled = false
-        editNumber.setBackgroundResource(R.drawable.backgroun_button_unenable)
+        editNumber.setBackgroundResource(R.drawable.background_button_unenable)
 
         var family = ""
         var familyBool = false
@@ -36,11 +36,11 @@ class DiabetesFamily : AppCompatActivity() {
             noButton.isEnabled = false
             yesButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.background_button_primary)
-            noButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            nextButton.setBackgroundResource(R.style.ButtonPrimary)
+            noButton.setBackgroundResource(R.drawable.background_button_unenable)
             yesButton.setBackgroundResource(R.drawable.background_button_info)
             editNumber.isEnabled = false
-            editNumber.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            editNumber.setBackgroundResource(R.drawable.background_button_unenable)
             family = "No"
             familyBool = false
         }
@@ -49,8 +49,8 @@ class DiabetesFamily : AppCompatActivity() {
             yesButton.isEnabled = false
             noButton.isEnabled = true
             nextButton.isEnabled = true
-            nextButton.setBackgroundResource(R.drawable.background_button_primary)
-            yesButton.setBackgroundResource(R.drawable.backgroun_button_unenable)
+            nextButton.setBackgroundResource(R.style.ButtonPrimary)
+            yesButton.setBackgroundResource(R.drawable.background_button_unenable)
             noButton.setBackgroundResource(R.drawable.background_button_info)
             editNumber.isEnabled = true
             editNumber.setBackgroundResource(R.drawable.background_button_secondary)
