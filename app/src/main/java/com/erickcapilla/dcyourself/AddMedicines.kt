@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import com.erickcapilla.dcyourself.util.DatePickerFragment
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -45,7 +45,7 @@ class AddMedicines : AppCompatActivity() {
         editFrequency.adapter = frequencyAdapter
         editFrequency.prompt = "Cada cuantas horas"
 
-        val uiModels = UIUtils()
+        val uiModels = Utils()
 
         editStart.setOnClickListener{ showDatePickerDialog(editStart) }
         editEnd.setOnClickListener{ showDatePickerDialog(editEnd) }

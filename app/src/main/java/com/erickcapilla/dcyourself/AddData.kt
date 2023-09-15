@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -28,7 +28,7 @@ class AddData : AppCompatActivity() {
             }
         }
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
         val editGlucose = findViewById<EditText>(R.id.editGlucose)
         val editHemoglobin = findViewById<EditText>(R.id.editHemoglobin)
         val editInsulin= findViewById<EditText>(R.id.editInsulin)

@@ -1,8 +1,8 @@
-package com.erickcapilla.dcyourself.adapter
+package com.erickcapilla.dcyourself.core.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.erickcapilla.dcyourself.model.DataMedicines
+import com.erickcapilla.dcyourself.data.model.DataMedicines
 import com.erickcapilla.dcyourself.databinding.ItemMedicineBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

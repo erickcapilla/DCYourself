@@ -13,7 +13,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,7 +48,7 @@ class SignUp2 : AppCompatActivity() {
         val errorConfirmPassword = findViewById<TextView>(R.id.errorConfirmPassword)
         val goBack = findViewById<Button>(R.id.go_back)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         val eyeButton = findViewById<ImageButton>(R.id.eyeButton)
         var visibility = false
@@ -136,9 +136,9 @@ class SignUp2 : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             signUp.isEnabled = false
-            signUp.setBackgroundResource(R.drawable.background_button_unenable)
+            signUp.setBackgroundResource(R.drawable.background_button_disable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.background_button_unenable)
+            goBack.setBackgroundResource(R.drawable.background_button_disable)
 
             auth.createUserWithEmailAndPassword(editEmail.text.toString().trim(),
                 editPassword.text.toString()).addOnCompleteListener(this) { task ->

@@ -3,15 +3,13 @@ package com.erickcapilla.dcyourself
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.viewpager.widget.ViewPager
-import com.erickcapilla.dcyourself.adapter.RecommendationAdapter
+import com.erickcapilla.dcyourself.core.adapter.RecommendationAdapter
 import com.erickcapilla.dcyourself.databinding.ActivityRecommendationsBinding
-import com.erickcapilla.dcyourself.model.DataRecommendations
-import com.erickcapilla.dcyourself.provider.services.firebase.RecommendationProvider
+import com.erickcapilla.dcyourself.data.model.DataRecommendations
+import com.erickcapilla.dcyourself.data.network.RecommendationProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
 
 class Recommendations : AppCompatActivity() {
     private lateinit var binding: ActivityRecommendationsBinding

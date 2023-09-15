@@ -9,53 +9,39 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.databinding.ActivitySignUpBinding
+import com.erickcapilla.dcyourself.util.Utils
 
 
 class SignUp : AppCompatActivity() {
+    private lateinit var binding: ActivitySignUpBinding
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
-        val editName = findViewById<EditText>(R.id.editName)
-        val editLastName = findViewById<EditText>(R.id.editLastName)
-        val editLastName2 = findViewById<EditText>(R.id.editLastName2)
-        val error = findViewById<TextView>(R.id.error)
-        val next = findViewById<Button>(R.id.next)
-
-        editName.setOnClickListener {
-            error.visibility = View.GONE
-        }
-
-        editLastName.setOnClickListener {
-            error.visibility = View.GONE
-        }
-
-        editLastName2.setOnClickListener {
-            error.visibility = View.GONE
-        }
-
-        next.setOnClickListener {
-            if(!uiModel.isEditEmpty(listOf(editName, editLastName, editLastName2))) {
-                if(uiModel.isNotMin(listOf(editName, editLastName, editLastName2))) {
-                    error.visibility = View.VISIBLE
+        binding.next.setOnClickListener {
+            if(!uiModel.isEditEmpty(listOf(binding.editName, binding.editLastName, binding.editLastName2))) {
+                if(uiModel.isNotMin(listOf(binding.editName, binding.editLastName, binding.editLastName2))) {
+                    binding.editName.error = getString(R.string.three_characters_min)
+                    binding.editLastName.error = getString(R.string.three_characters_min)
+                    binding.editLastName2.error = getString(R.string.three_characters_min)
                     return@setOnClickListener
                 }
                 val change = Intent(this, SignUp2::class.java)
-                change.putExtra("name", editName.text.toString().trim())
-                change.putExtra("lastName", editLastName.text.toString().trim())
-                change.putExtra("lastName2", editLastName2.text.toString().trim())
+                change.putExtra("name", binding.editName.text.toString().trim())
+                change.putExtra("lastName", binding.editLastName.text.toString().trim())
+                change.putExtra("lastName2", binding.editLastName2.text.toString().trim())
                 startActivity(change)
             } else {
                 uiModel.showToast(applicationContext, "Ingresa todos los datos que se solicitan")
             }
         }
 
-        val goBack = findViewById<Button>(R.id.go_back)
-        goBack.setOnClickListener{
+        binding.goBack.setOnClickListener{
             finish()
         }
     }

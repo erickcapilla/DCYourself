@@ -5,12 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.erickcapilla.dcyourself.util.DatePickerFragment
-import com.erickcapilla.dcyourself.util.UIUtils
-import com.google.firebase.auth.FirebaseAuth
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,7 +23,7 @@ class BirthDate : AppCompatActivity() {
         val nextButton = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.go_back)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         calendar.setOnClickListener{ showDatePickerDialog() }
 
@@ -48,7 +46,7 @@ class BirthDate : AppCompatActivity() {
 
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         if(year > 2020) {
-            val uiModel = UIUtils()
+            val uiModel = Utils()
             uiModel.showToast(applicationContext, "Elige un año menor o igual a 2020")
         } else {
             val calendar = findViewById<EditText>(R.id.calendarView)

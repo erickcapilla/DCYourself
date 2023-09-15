@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
-import com.google.firebase.auth.FirebaseAuth
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -23,7 +21,7 @@ class WeightHeight : AppCompatActivity() {
         val nextButton = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.go_back)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         nextButton.setOnClickListener {
             if(!uiModel.isEditEmpty(listOf(editHeight, editWeight))) {

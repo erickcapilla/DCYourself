@@ -12,18 +12,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.erickcapilla.dcyourself.adapter.QuestionAdapter
+import com.erickcapilla.dcyourself.core.adapter.QuestionAdapter
 import com.erickcapilla.dcyourself.databinding.ActivityTestBinding
-import com.erickcapilla.dcyourself.model.DataQuestions
-import com.erickcapilla.dcyourself.provider.services.firebase.QuestionProvider
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.data.model.DataQuestions
+import com.erickcapilla.dcyourself.data.network.QuestionProvider
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 import java.util.Locale
 
 class Test : AppCompatActivity() {
@@ -44,7 +43,7 @@ class Test : AppCompatActivity() {
         var gender = ""
         var diabetic = ""
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         auth = Firebase.auth
         val db = Firebase.firestore

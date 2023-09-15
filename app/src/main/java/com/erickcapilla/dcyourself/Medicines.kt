@@ -1,21 +1,16 @@
 package com.erickcapilla.dcyourself
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.erickcapilla.dcyourself.adapter.MedicineAdapter
+import com.erickcapilla.dcyourself.core.adapter.MedicineAdapter
 import com.erickcapilla.dcyourself.databinding.ActivityMedicinesBinding
-import com.erickcapilla.dcyourself.model.DataMedicines
-import com.erickcapilla.dcyourself.provider.services.firebase.MedicineProvider
+import com.erickcapilla.dcyourself.data.model.DataMedicines
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -126,8 +121,10 @@ class Medicines : AppCompatActivity() {
 
                     val days = calcularDiasEntreFechas(dateOne, dateTwo).toString()
 
-                    medsList.add(DataMedicines(
-                        idDoc, name, total, days, frequency, dose, dateTwo))
+                    medsList.add(
+                        DataMedicines(
+                        idDoc, name, total, days, frequency, dose, dateTwo)
+                    )
                 }
             }
 

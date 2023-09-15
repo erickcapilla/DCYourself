@@ -1,29 +1,17 @@
-package com.erickcapilla.dcyourself.provider.services.firebase
+package com.erickcapilla.dcyourself.data.network
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.util.Log
+import com.erickcapilla.dcyourself.data.model.DataMedicines
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.tasks.await
-import com.erickcapilla.dcyourself.model.DataMedicines
 
-
-class FBAuth {
+class FBStore {
     private lateinit var auth: FirebaseAuth
     private val db = Firebase.firestore
-    private val user = Firebase.auth.currentUser
-
-    /**
-     * Is user logged
-     *
-     * @return The user is logged into an account
-     */
-    fun isUserLogged() : Boolean {
-        return user != null
-    }
 
     fun signUpUser(name: String, lastName: String, lastName2: String, email: String, password: String): Boolean {
         var state = false
@@ -44,7 +32,7 @@ class FBAuth {
                             ))
                     }
                 Firebase.auth.signOut()
-                Log.v(TAG, "Estado 1: " + state.toString())
+                Log.v(ContentValues.TAG, "Estado 1: " + state.toString())
             }
         }
         return false

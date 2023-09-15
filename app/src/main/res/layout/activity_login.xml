@@ -4,9 +4,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:isScrollContainer="true"
   tools:context=".Login">
 
-  <TextView
+  <View
     android:id="@+id/my_label"
     style="@style/BackgroundForm"
     android:layout_marginTop="330dp"
@@ -20,13 +21,11 @@
 
   <ImageView
     android:id="@+id/img"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    style="@style/PrincipalLogo"
     app:layout_constraintBottom_toTopOf="@+id/my_label"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/img_logo_principal"
     tools:ignore="ContentDescription" />
 
   <TextView
@@ -49,14 +48,13 @@
   <EditText
     android:id="@+id/editEmail"
     android:fontFamily="@font/droid_sans"
-    style="@style/ButtonSecondary"
-    android:layout_width="314dp"
-    android:layout_height="56dp"
+    style="@style/BackgroundEdit"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="60dp"
     android:ems="10"
     android:hint="@string/email"
     android:inputType="textEmailAddress"
-    android:paddingStart="10dp"
-    android:textSize="16sp"
     app:layout_constraintBottom_toTopOf="@+id/editPassword"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -65,34 +63,19 @@
     app:layout_constraintVertical_bias="0.5"
     tools:ignore="autofill,RtlSymmetry" />
 
-  <TextView
-    android:id="@+id/errorEmail"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
-    android:layout_marginStart="5dp"
-    app:layout_constraintStart_toStartOf="@+id/editEmail"
-    app:layout_constraintTop_toBottomOf="@+id/editEmail"
-    android:textAlignment="center"
-    android:textColor="#FFF"
-    android:visibility="gone"
-    android:fontFamily="@font/droid_sans_bold"
-    android:textSize="11sp"
-    android:text="@string/email_valid"
-    />
-
 
   <EditText
     android:id="@+id/editPassword"
-    android:layout_width="314dp"
-    android:layout_height="56dp"
-    android:background="@drawable/background_button_secondary"
+    style="@style/BackgroundEdit"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="60dp"
+    android:layout_marginBottom="5dp"
+    android:paddingEnd="40dp"
+    android:paddingVertical="15dp"
     android:ems="10"
-    android:fontFamily="@font/droid_sans"
     android:hint="@string/password"
     android:inputType="textPassword"
-    android:paddingStart="10dp"
-    android:textSize="16sp"
     app:layout_constraintBottom_toTopOf="@+id/textForgot"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -103,12 +86,11 @@
 
   <ImageButton
     android:id="@+id/eyeButton"
+    style="@style/EyeIcon"
     android:layout_width="wrap_content"
     android:layout_height="0dp"
     android:paddingHorizontal="10dp"
     android:layout_marginEnd="1dp"
-    android:src="@drawable/baseline_visibility_24"
-    android:background="#00000000"
     app:layout_constraintEnd_toEndOf="@+id/editPassword"
     app:layout_constraintBottom_toBottomOf="@+id/editPassword"
     app:layout_constraintTop_toTopOf="@+id/editPassword"
@@ -121,7 +103,7 @@
     android:fontFamily="@font/droid_sans"
     android:text="@string/forgot_password"
     android:textColor="#FFFFFF"
-    app:layout_constraintBottom_toTopOf="@+id/go_back"
+    app:layout_constraintBottom_toTopOf="@+id/goBack"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
@@ -129,15 +111,12 @@
     app:layout_constraintVertical_bias="0.5" />
 
   <Button
-    android:id="@+id/go_back"
+    android:id="@+id/goBack"
+    style="@style/ButtonSecondary"
     android:layout_width="112dp"
-    android:layout_height="56dp"
+    android:layout_height="55dp"
     android:layout_marginBottom="40dp"
-    android:background="@drawable/background_button_secondary"
-    android:fontFamily="@font/droid_sans_bold"
     android:text="@string/go_back"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textColor="#28A6A6"
     android:textSize="16sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -145,10 +124,10 @@
     app:layout_constraintStart_toStartOf="parent" />
 
   <Button
-    android:id="@+id/logIn"
+    android:id="@+id/login"
     style="@style/ButtonPrimary"
     android:layout_width="112dp"
-    android:layout_height="56dp"
+    android:layout_height="55dp"
     android:layout_marginBottom="40dp"
     android:text="@string/log"
     android:textSize="16sp"
@@ -157,33 +136,17 @@
     app:layout_constraintHorizontal_bias="0.8"
     app:layout_constraintStart_toStartOf="parent"/>
 
-  <ProgressBar
+  <com.erickcapilla.dcyourself.util.ProgressBarComponent
     android:id="@+id/progressBar"
-    style="?android:attr/progressBarStyle"
+    style="@style/ProgressTheme"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/img"
     app:layout_constraintBottom_toTopOf="@+id/my_label"
-    android:indeterminateTint="#155959"
-    android:backgroundTint="@color/white"
-    app:layout_constraintHorizontal_bias="0.25"
-    android:visibility="gone"
-    />
-
-  <TextView
-    android:id="@+id/progressTitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/wait_moment"
-    android:textSize="16sp"
-    android:textColor="#155959"
-    android:fontFamily="@font/droid_sans_bold"
-    app:layout_constraintStart_toEndOf="@+id/progressBar"
-    app:layout_constraintTop_toTopOf="@+id/progressBar"
-    app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-    app:layout_constraintHorizontal_bias="0.1"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:message="@string/wait_moment"
     android:visibility="gone"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

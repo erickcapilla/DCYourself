@@ -1,15 +1,13 @@
-package com.erickcapilla.dcyourself.adapter
+package com.erickcapilla.dcyourself.core.adapter
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.erickcapilla.dcyourself.R
-import com.erickcapilla.dcyourself.model.DataQuestions
+import com.erickcapilla.dcyourself.core.holder.QuestionViewHolder
+import com.erickcapilla.dcyourself.data.model.DataQuestions
 
 class QuestionAdapter(private val questionsList: List<DataQuestions>):RecyclerView.Adapter<QuestionViewHolder>() {
     private val selectedGroups = mutableListOf<Int>()

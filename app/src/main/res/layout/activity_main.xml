@@ -4,19 +4,29 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity" >
+  tools:context=".ui.MainActivity" >
 
-  <TextView
+  <View
     android:id="@+id/my_label"
     style="@style/BackgroundForm"
-    android:layout_marginTop="330dp"
+    android:layout_width="0dp"
     android:padding="10dp"
+    android:layout_marginTop="330dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="1.0" />
+
+  <ImageView
+    android:id="@+id/imageView"
+    style="@style/PrincipalLogo"
+    app:layout_constraintBottom_toTopOf="@+id/my_label"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="ContentDescription"/>
 
   <TextView
     android:id="@+id/textView2"
@@ -36,10 +46,11 @@
 
   <Button
     android:id="@+id/signUp"
-    android:layout_width="245dp"
-    android:layout_height="55dp"
-    android:text="@string/signup"
     style="@style/ButtonPrimary"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="60dp"
+    android:text="@string/signup"
     app:layout_constraintBottom_toTopOf="@+id/logIn"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
@@ -49,10 +60,11 @@
 
   <Button
     android:id="@+id/logIn"
-    android:layout_width="245dp"
-    android:layout_height="55dp"
-    android:text="@string/login"
     style="@style/ButtonSecondary"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_marginHorizontal="60dp"
+    android:text="@string/login"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.497"
@@ -70,18 +82,9 @@
     android:textSize="16sp"
     app:layout_constraintBottom_toTopOf="@+id/logIn"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.307"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintHorizontal_bias="0"
+    app:layout_constraintStart_toStartOf="@+id/logIn"
     app:layout_constraintTop_toBottomOf="@+id/signUp"
     app:layout_constraintVertical_bias="0.872" />
-
-  <ImageView
-    android:id="@+id/imageView"
-    style="@style/PrincipalLogo"
-    app:layout_constraintBottom_toTopOf="@+id/my_label"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="ContentDescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

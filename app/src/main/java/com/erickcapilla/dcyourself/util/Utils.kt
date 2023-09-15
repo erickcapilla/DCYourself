@@ -3,8 +3,9 @@ package com.erickcapilla.dcyourself.util
 import android.content.Context
 import android.widget.EditText
 import android.widget.Toast
+import com.erickcapilla.dcyourself.R
 
-class UIUtils {
+class Utils {
     fun isEditEmpty(edits: List<EditText>): Boolean {
         var empty = false
         for (edit in edits) {

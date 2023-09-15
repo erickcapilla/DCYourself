@@ -4,7 +4,6 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="#7378DFDF"
   tools:context=".Diagnose">
 
   <TextView
@@ -90,7 +89,8 @@
     app:layout_constraintEnd_toEndOf="@+id/editGlucose"
     app:layout_constraintTop_toTopOf="@+id/editGlucose"
     app:layout_constraintBottom_toBottomOf="@+id/editGlucose"
-    tools:ignore="ContentDescription" />
+    tools:ignore="ContentDescription"
+    android:visibility="gone"/>
 
   <EditText
     android:id="@+id/editHemoglobin"

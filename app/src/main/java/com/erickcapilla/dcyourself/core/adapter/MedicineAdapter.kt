@@ -1,10 +1,11 @@
-package com.erickcapilla.dcyourself.adapter
+package com.erickcapilla.dcyourself.core.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.erickcapilla.dcyourself.model.DataMedicines
+import com.erickcapilla.dcyourself.data.model.DataMedicines
 import com.erickcapilla.dcyourself.R
+import com.erickcapilla.dcyourself.core.holder.MedicineViewHolder
 
 class MedicineAdapter(private val medicineList: List<DataMedicines>, private val onClickListener: (String, DataMedicines) -> Unit):RecyclerView.Adapter<MedicineViewHolder>() {
 

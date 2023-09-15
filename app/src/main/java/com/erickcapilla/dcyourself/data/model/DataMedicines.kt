@@ -1,4 +1,4 @@
-package com.erickcapilla.dcyourself.model
+package com.erickcapilla.dcyourself.data.model
 
 data class DataMedicines(val id: String,
                          val medicineName: String,

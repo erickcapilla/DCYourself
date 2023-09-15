@@ -1,4 +1,4 @@
-package com.erickcapilla.dcyourself.adapter
+package com.erickcapilla.dcyourself.core.adapter
 
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
-import com.erickcapilla.dcyourself.model.DataRecommendations
+import com.erickcapilla.dcyourself.data.model.DataRecommendations
 import com.erickcapilla.dcyourself.R
 
 class RecommendationAdapter(private val recommendationList: MutableList<DataRecommendations>, private val imgView: Int): PagerAdapter() {

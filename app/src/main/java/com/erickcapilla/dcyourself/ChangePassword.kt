@@ -11,7 +11,7 @@ import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -36,7 +36,7 @@ class ChangePassword : AppCompatActivity() {
         val errorConfirmPassword = findViewById<TextView>(R.id.errorConfirmPassword)
         val goBack = findViewById<Button>(R.id.go_back)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         val upDateButton = findViewById<Button>(R.id.update)
         upDateButton.setOnClickListener {
@@ -58,9 +58,9 @@ class ChangePassword : AppCompatActivity() {
             progressTitle.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             upDateButton.isEnabled = false
-            upDateButton.setBackgroundResource(R.drawable.background_button_unenable)
+            upDateButton.setBackgroundResource(R.drawable.background_button_disable)
             goBack.isEnabled = false
-            goBack.setBackgroundResource(R.drawable.background_button_unenable)
+            goBack.setBackgroundResource(R.drawable.background_button_disable)
 
             val email = user?.email
             val credential = EmailAuthProvider.getCredential(email.toString(), editPassword.text.toString())

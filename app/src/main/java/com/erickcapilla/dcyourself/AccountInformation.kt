@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,7 +28,7 @@ class AccountInformation : AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.goBack)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
         var newEmail:String
 
         auth = Firebase.auth

@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.erickcapilla.dcyourself.util.UIUtils
-import com.erickcapilla.dcyourself.provider.services.firebase.FBAuth
+import com.erickcapilla.dcyourself.util.Utils
+import com.erickcapilla.dcyourself.data.network.FBAuth
+import com.erickcapilla.dcyourself.ui.MainActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -39,7 +40,7 @@ class Home : AppCompatActivity() {
             }
         }
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
         val docRefInfo = db.collection("info").document(email)
         val docRefUser = db.collection("user").document(email)
 

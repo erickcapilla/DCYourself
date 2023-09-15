@@ -8,7 +8,7 @@
   <string name="sixth_message_terms">Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento sin previo aviso. Se te notificará de los cambios a través de la aplicación o por otros medios adecuados. Si continúas utilizando la aplicación después de la modificación de los términos y condiciones, se considerará que has aceptado los cambios.</string>
   <string name="fifth_message_terms">La aplicación se proporciona tal cual y no ofrecemos ninguna garantía o representación, expresa o implícita, sobre su precisión, confiabilidad o adecuación para un propósito particular. No seremos responsables de ningún daño directo, indirecto, incidental, consecuente o punitivo derivado del uso de esta aplicación.</string>
   <string name="negative_message">Sigue utilizando la aplicación, la sección de RECOMENDACIONES te ayudará más de lo que crees. Acude a tu medico</string>
-  <string name="recover_password_message">Enviaremos un link al correo asociado a tu cuenta para asegurarnos que esta cuenta te pertenece.</string>
+  <string name="recover_password_message">Enviaremos un link al correo asociado a tu cuenta para asegurarnos que la cuenta te pertenece.</string>
   <string name="positive_message">A continuación contestarás un cuestionario. Es importante que acudas a tu médico.</string>
   <string name="medicines_control">Lleva un control de tus medicamentos. Accede a la sección de Medicamentos.</string>
   <string name="password_valid">Mínimo de 8 caracteres. Un número, una mayuscula y un caracter especial</string>
@@ -19,7 +19,7 @@
   <string name="sixth_title_message_terms">Cambios en los Términos y Condiciones</string>
   <string name="check_recommend">Checa las recomendaciones que tenemos para ti.</string>
   <string name="days_exercise">¿Cada Cuánto hace ejercicio? (días por semana)</string>
-  <string name="email_valid">Formato de correo aceptado: ejemplo123@mail.com</string>
+  <string name="email_valid">Formato de correo aceptado: exam123@mail.com</string>
   <string name="first_title_message_terms">Propósito y Uso de la Aplicación</string>
   <string name="third_title_message_terms">Privacidad y Protección de Datos</string>
   <string name="family_with_diabetes">¿Tienes algún familiar con diabetes?</string>

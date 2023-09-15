@@ -1,6 +1,6 @@
-package com.erickcapilla.dcyourself.provider.services.firebase
+package com.erickcapilla.dcyourself.data.network
 
-import com.erickcapilla.dcyourself.model.DataQuestions
+import com.erickcapilla.dcyourself.data.model.DataQuestions
 
 class QuestionProvider {
     companion object {

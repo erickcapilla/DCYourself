@@ -1,6 +1,5 @@
 package com.erickcapilla.dcyourself
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -9,7 +8,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import com.erickcapilla.dcyourself.util.DatePickerFragment
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -33,7 +32,7 @@ class PersonalInformation : AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val goBack = findViewById<Button>(R.id.goBack)
 
-        val uiModels = UIUtils()
+        val uiModels = Utils()
 
         val listGender = arrayOf("Mujer", "Hombre")
         val genderAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listGender)

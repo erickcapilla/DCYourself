@@ -1,18 +1,9 @@
 package com.erickcapilla.dcyourself
 
 import android.Manifest
-import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothGatt
-import android.bluetooth.BluetoothGattCallback
-import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothManager
-import android.bluetooth.BluetoothProfile
-import android.bluetooth.le.ScanCallback
-import android.bluetooth.le.ScanFilter
-import android.bluetooth.le.ScanResult
-import android.bluetooth.le.ScanSettings
 import android.content.BroadcastReceiver
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -26,18 +17,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.util.UUID
 
 
@@ -49,7 +37,7 @@ class Diagnose : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diagnose)
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
         val editGlucose = findViewById<EditText>(R.id.editGlucose)
         val editHemoglobin = findViewById<EditText>(R.id.editHemoglobin)
         val editInsulin= findViewById<EditText>(R.id.editInsulin)

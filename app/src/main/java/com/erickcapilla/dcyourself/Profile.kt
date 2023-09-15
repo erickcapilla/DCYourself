@@ -4,14 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.ui.MainActivity
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -32,7 +31,7 @@ class Profile : AppCompatActivity() {
         val delete = findViewById<Button>(R.id.deleteAccount)
         val goBack = findViewById<Button>(R.id.goBack)
 
-        val uiUtil = UIUtils()
+        val uiUtil = Utils()
 
         auth = Firebase.auth
         val db = Firebase.firestore

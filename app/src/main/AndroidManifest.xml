@@ -121,11 +121,6 @@
       android:screenOrientation="portrait"
       tools:ignore="LockedOrientationActivity" />
     <activity
-      android:name=".RecoverPassword2"
-      android:exported="false"
-      android:screenOrientation="portrait"
-      tools:ignore="LockedOrientationActivity" />
-    <activity
       android:name=".RecoverPassword"
       android:exported="false"
       android:screenOrientation="portrait"
@@ -143,6 +138,7 @@
     <activity
       android:name=".Login"
       android:exported="false"
+      android:windowSoftInputMode="adjustPan"
       android:screenOrientation="portrait"
       tools:ignore="LockedOrientationActivity" />
     <activity
@@ -156,7 +152,7 @@
       android:screenOrientation="portrait"
       tools:ignore="LockedOrientationActivity" />
     <activity
-      android:name=".MainActivity"
+      android:name=".ui.MainActivity"
       android:exported="true"
       android:screenOrientation="portrait"
       android:theme="@style/SplashTheme"

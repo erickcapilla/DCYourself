@@ -1,6 +1,6 @@
-package com.erickcapilla.dcyourself.provider.services.firebase
+package com.erickcapilla.dcyourself.data.network
 
-import com.erickcapilla.dcyourself.model.DataRecommendations
+import com.erickcapilla.dcyourself.data.model.DataRecommendations
 
 class RecommendationProvider {
     companion object {

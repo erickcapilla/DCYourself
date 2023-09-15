@@ -1,7 +1,7 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
   <!-- Base application theme. -->
   <style name="Theme.DCYourself" parent="Theme.AppCompat.DayNight.NoActionBar">
-    <item name="android:colorBackground"> @color/background_dark </item>
+    <item name="android:colorBackground">@color/background_dark</item>
     <!-- Primary brand color. -->
     <item name="colorPrimary">@color/green_500</item>
     <item name="colorPrimaryVariant">@color/green_700</item>
@@ -10,8 +10,10 @@
     <item name="colorSecondary">@color/aqua_500</item>
     <item name="colorSecondaryVariant">@color/aqua_200</item>
     <item name="colorOnSecondary">@color/black</item>
-    <!-- Status bar color. -->
-    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    <!-- Navigation bar -->
+    <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
+    <!-- Status bar color -->
+    <item name="android:statusBarColor">@color/background_dark</item>
   </style>
 
   <!-- Background Color -->
@@ -61,6 +63,14 @@
     <item name="android:textSize">20sp</item>
   </style>
 
+  <style name="ButtonDisable" parent="Theme.DCYourself">
+    <item name="android:background">@drawable/background_button_disable_dark</item>
+    <item name="fontFamily">@font/droid_sans_bold</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+    <item name="android:textColor">@color/gray</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
   <!-- EditText -->
 
   <style name="BackgroundEdit" parent="Theme.DCYourself">
@@ -68,7 +78,11 @@
     <item name="fontFamily">@font/droid_sans</item>
     <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
     <item name="android:textColor">?attr/colorOnPrimary</item>
-    <item name="android:textSize">20sp</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:paddingStart">10dp</item>
+    <item name="android:paddingEnd">10dp</item>
+    <item name="android:paddingTop">15dp</item>
+    <item name="android:paddingBottom">15dp</item>
   </style>
 
   <!-- Logos -->
@@ -104,9 +118,18 @@
 
   <!-- Icons and Images -->
 
+  <style name="EyeIcon" parent="Theme.DCYourself">
+    <item name="android:src">@drawable/baseline_visibility_24</item>
+    <item name="tint">?attr/colorOnPrimary</item>
+    <item name="android:background">#00000000</item>
+  </style>
+
   <!-- SplashScreen -->
 
   <style name="SplashTheme" parent="Theme.DCYourself">
+    <item name="android:windowDisablePreview">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowNoTitle">true</item>
     <item name="android:windowBackground">@drawable/splash_dark</item>
   </style>
 
@@ -115,4 +138,10 @@
   <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
     <item name="android:colorAccent">?attr/colorPrimary</item>
   </style>
+
+  <!-- ProgressBar -->
+  <style name="ProgressTheme" parent="Theme.DCYourself">
+    <item name="progressColor">?attr/colorOnPrimary</item>
+  </style>
+
 </resources>

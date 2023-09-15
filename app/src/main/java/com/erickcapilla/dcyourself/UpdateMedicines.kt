@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.RecyclerView
-import com.erickcapilla.dcyourself.adapter.MedicineAdapter
+import com.erickcapilla.dcyourself.core.adapter.MedicineAdapter
 import com.erickcapilla.dcyourself.util.DatePickerFragment
-import com.erickcapilla.dcyourself.util.UIUtils
+import com.erickcapilla.dcyourself.util.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -40,7 +37,7 @@ class UpdateMedicines : AppCompatActivity() {
         val docRefUser = db.collection("med").document(email)
         val medicinesData = docRefUser.collection("meds")
 
-        val uiModel = UIUtils()
+        val uiModel = Utils()
 
         val bundle = intent.extras
         val id = bundle?.getString("id").toString()
