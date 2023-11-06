@@ -1,9 +1,11 @@
 package com.erickcapilla.dcyourself
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
@@ -13,9 +15,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.erickcapilla.dcyourself.util.Utils
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -69,10 +73,14 @@ class SignUp2 : AppCompatActivity() {
             if(visibility) {
                 visibility = false
                 editPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                editConfirmPassword.typeface = ResourcesCompat.getFont(this, R.font.droid_sans)
+                editPassword.setSelection(editPassword.text.length)
                 eyeButton.setImageResource(R.drawable.baseline_visibility_24)
             } else {
                 visibility = true
                 editPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                editConfirmPassword.typeface = ResourcesCompat.getFont(this, R.font.droid_sans)
+                editPassword.setSelection(editPassword.text.length)
                 eyeButton.setImageResource(R.drawable.baseline_visibility_off_24)
             }
         }
@@ -84,10 +92,14 @@ class SignUp2 : AppCompatActivity() {
             if(visibility2) {
                 visibility2 = false
                 editConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                editConfirmPassword.typeface = ResourcesCompat.getFont(this, R.font.droid_sans)
+                editConfirmPassword.setSelection(editConfirmPassword.text.length)
                 eyeButton2.setImageResource(R.drawable.baseline_visibility_24)
             } else {
                 visibility2 = true
                 editConfirmPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                editConfirmPassword.typeface = ResourcesCompat.getFont(this, R.font.droid_sans)
+                editConfirmPassword.setSelection(editConfirmPassword.text.length)
                 eyeButton2.setImageResource(R.drawable.baseline_visibility_off_24)
             }
         }
@@ -183,10 +195,22 @@ class SignUp2 : AppCompatActivity() {
                     signUp.isEnabled = true
                     progressBar.visibility = View.GONE
                     progressTitle.visibility = View.GONE
-                    signUp.setBackgroundResource(R.style.ButtonPrimary)
+                    signUp.setBackgroundResource(R.drawable.background_button_primary)
                     goBack.isEnabled = true
                     goBack.setBackgroundResource(R.drawable.background_button_secondary)
-                    uiModel.showToast(applicationContext, "Ya hay un usuario con este correo. Revisa tu conexión")
+                    val e = task.exception as? FirebaseAuthException
+                    Log.v(TAG, e?.errorCode.toString())
+
+                    when (e?.errorCode.toString()) {
+                        "ERROR_EMAIL_ALREADY_IN_USE" -> {
+                            uiModel.showToast(applicationContext, "El usuario ya existe")
+                        }
+                        else -> {
+                            // Otro error
+                            uiModel.showToast(applicationContext, "Ocurrió un error | Revisa tu conexión")
+                        }
+                    }
+                    uiModel.showToast(applicationContext, "Ya hay un usuario con este correo o Revisa tu conexión")
                 }
             }
         }

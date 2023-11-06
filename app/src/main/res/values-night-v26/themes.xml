@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-  <style name="BackgroundEdit" parent="Theme.DCYourself">
+<!--
+  <style name="BackgroundEdit" parent="Theme.DCYourself2">
     <item name="android:background">@drawable/background_button_secondary_dark</item>
     <item name="fontFamily">@font/droid_sans</item>
     <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
@@ -9,4 +9,5 @@
     <item name="android:textSize">16sp</item>
     <item name="android:paddingHorizontal">10dp</item>
   </style>
+  -->
 </resources>

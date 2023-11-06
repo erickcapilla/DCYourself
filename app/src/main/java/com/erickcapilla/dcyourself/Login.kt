@@ -1,8 +1,10 @@
 package com.erickcapilla.dcyourself
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.activity.viewModels
+import com.google.firebase.auth.FirebaseAuthException
 
 class Login : AppCompatActivity() {
 
@@ -72,7 +75,9 @@ class Login : AppCompatActivity() {
       binding.progressBar.visibility = View.VISIBLE
       binding.login.isClickable = false
 
-      auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
+      auth.signInWithEmailAndPassword(email, password)
+        .addOnCompleteListener(this) {
+
         if (it.isSuccessful) {
           binding.progressBar.visibility = View.GONE
           val change = Intent(this, Home::class.java)
@@ -80,7 +85,23 @@ class Login : AppCompatActivity() {
         } else {
           binding.login.isClickable = true
           binding.progressBar.visibility = View.GONE
-          uiModel.showToast(applicationContext, "El usuario no existe. Revisa tu conexión")
+
+          val e = it.exception as? FirebaseAuthException
+
+          when (e?.errorCode.toString()) {
+              "ERROR_WRONG_PASSWORD" -> {
+                  // El usuario ingresó mal la contraseña
+                  uiModel.showToast(applicationContext, "Contraseña incorrecta")
+              }
+              "ERROR_USER_NOT_FOUND" -> {
+                  // El usuario no existe
+                  uiModel.showToast(applicationContext, "El usuario no existe")
+              }
+              else -> {
+                  // Otro error
+                  uiModel.showToast(applicationContext, "Ocurrió un error | Revisa tu conexión")
+              }
+          }
         }
       }
     }

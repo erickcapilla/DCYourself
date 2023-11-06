@@ -70,7 +70,7 @@
     android:id="@+id/next"
     android:layout_width="244dp"
     android:layout_height="55dp"
-    android:background="@drawable/background_button_secondary"
+    android:background="@drawable/background_button_primary"
     android:fontFamily="@font/droid_sans_bold"
     android:text="@string/continue_"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
